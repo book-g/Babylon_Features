@@ -74,7 +74,7 @@
                 const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
                 // Dude
-                BABYLON.SceneLoader.ImportMeshAsync("him", "../3dmodel", "start_walk.glb", scene).then((result) => {
+                BABYLON.SceneLoader.ImportMeshAsync("him", "../3dmodel/", "start_walk.glb", scene).then((result) => {
                     var dude = result.meshes[0];
                     dude.scaling = new BABYLON.Vector3(0.25, 0.25, 0.25);
                     scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
