@@ -2,105 +2,77 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Babylon.js sample code</title>
-       <!--fbxs-->
-       <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-
- <!-- Babylon.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
-        <script src="https://assets.babylonjs.com/generated/Assets.js"></script>
-        <script src="https://cdn.babylonjs.com/recast.js"></script>
-        <script src="https://cdn.babylonjs.com/ammo.js"></script>
-        <script src="https://cdn.babylonjs.com/havok/HavokPhysics_umd.js"></script>
-        <script src="https://cdn.babylonjs.com/cannon.js"></script>
-        <script src="https://cdn.babylonjs.com/Oimo.js"></script>
-        <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
+        <title>Babylon.js Sample Code</title>
+        <!-- Babylon.js Core Libraries -->
         <script src="https://cdn.babylonjs.com/babylon.js"></script>
-        <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
-        <script src="https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
-        <script src="https://cdn.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
-        <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
-        <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
-        <script src="https://cdn.babylonjs.com/addons/babylonjs.addons.min.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
         <script src="https://cdn.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
         <style>
-            html,
-            body {
+            html, body {
                 overflow: hidden;
                 width: 100%;
                 height: 100%;
                 margin: 0;
                 padding: 0;
             }
-
             #renderCanvas {
                 width: 100%;
                 height: 100%;
                 touch-action: none;
             }
-            #canvasZone {
-                width: 100%;
-                height: 100%;
-            }
         </style>
     </head>
     <body>
-        <div id="canvasZone"><canvas id="renderCanvas"></canvas></div>
+        <canvas id="renderCanvas"></canvas>
         <script>
+            // Access the canvas element
             var canvas = document.getElementById("renderCanvas");
 
-            var startRenderLoop = function (engine, canvas) {
-                engine.runRenderLoop(function () {
-                    if (sceneToRender && sceneToRender.activeCamera) {
-                        sceneToRender.render();
-                    }
-                });
-            }
-
-            var engine = null;
-            var scene = null;
-            var sceneToRender = null;
-
+            // Initialize the engine
             var createDefaultEngine = function() {
-                return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: true });
+                return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
             };
 
-            const createScene = function () {
+            var engine = createDefaultEngine();
+            var scene = null;
+
+            // Create the scene
+            const createScene = function() {
                 const scene = new BABYLON.Scene(engine);
+
+                // Add a camera
                 const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 50, new BABYLON.Vector3(0, 0, 0));
                 camera.attachControl(canvas, true);
+
+                // Add a light
                 const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-                // Dude
-                BABYLON.SceneLoader.ImportMeshAsync("him", "../3dmodel/", "start_walk.glb", scene).then((result) => {
-                    var dude = result.meshes[0];
+                // Load the 3D model
+                BABYLON.SceneLoader.ImportMeshAsync("", "../3dmodel/", "start_walk.glb", scene).then((result) => {
+                    const dude = result.meshes[0];
                     dude.scaling = new BABYLON.Vector3(0.25, 0.25, 0.25);
-                    scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
+                    if (result.skeletons.length > 0) {
+                        scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
+                    }
+                }).catch((error) => {
+                    console.error("Failed to load model:", error);
                 });
 
                 return scene;
             };
 
-            window.initFunction = async function() {
-                var asyncEngineCreation = async function() {
-                    try {
-                        return createDefaultEngine();
-                    } catch(e) {
-                        console.log("the available createEngine function failed. Creating the default engine instead");
-                        return createDefaultEngine();
+            // Start the scene
+            window.addEventListener("DOMContentLoaded", function() {
+                scene = createScene();
+                engine.runRenderLoop(function() {
+                    if (scene) {
+                        scene.render();
                     }
-                }
+                });
+            });
 
-                window.engine = await asyncEngineCreation();
-                if (!engine) throw 'engine should not be null.';
-                startRenderLoop(engine, canvas);
-                window.scene = createScene();
-            };
-
-            initFunction().then(() => { sceneToRender = scene });
-
-            // Resize
-            window.addEventListener("resize", function () {
+            // Handle window resizing
+            window.addEventListener("resize", function() {
                 engine.resize();
             });
         </script>
