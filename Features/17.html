@@ -72,7 +72,7 @@
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
     // Load the sound, give it time to load and play it every 3 seconds
-   const bounce = new BABYLON.Sound("bounce", "sounds/bounce.wav", scene);
+   const bounce = new BABYLON.Sound("bounce", "../Sound/17.wav", scene);
    setInterval(() => bounce.play(), 3000);
 
     const box = BABYLON.MeshBuilder.CreateBox("box", {});
