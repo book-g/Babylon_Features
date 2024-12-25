@@ -1,5 +1,5 @@
 # Journey
- 1. [Goodbye Sphere]()
+ 1. [Goodbye Sphere](/Journey/1.html)
  2. [The ground is red!]()
  3. [The ground is checkered!]()
  4. [Yeti on the dance floor!]()
