@@ -9,7 +9,7 @@
   
   ## Starter Scene Code
 
-  6. [CreateScene]()<br>
+  6. [CreateScene](/Features/create_scene.html)<br>
 
   ## Introduction
    
