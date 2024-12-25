@@ -62,56 +62,114 @@
         var createDefaultEngine = function() {	
 		return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
         
-        var createScene = function () {
-	const scene = new BABYLON.Scene(engine);
 
-    const camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 2.2, 50, BABYLON.Vector3.Zero(), scene);
-    camera.attachControl(canvas, true);
-	const light = new BABYLON.HemisphericLight("hemi", new BABYLON.Vector3(0, 50, 0));
-    light.intensity = 0.5
-
-    //add a spotlight and later after a mesh lamp post and a bulb have been created
-    //then will make the post a parent to the bulb and 
-    //the bulb to the parent
-    const lampLight = new BABYLON.SpotLight("lampLight", BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, -1, 0), Math.PI, 1, scene);
-    lampLight.diffuse = BABYLON.Color3.Yellow();
-
-	//shape to extrude
-	const lampShape = [];
-    for(let i = 0; i < 20; i++) {
-        lampShape.push(new BABYLON.Vector3(Math.cos(i * Math.PI / 10), Math.sin(i * Math.PI / 10), 0));
-    }
-	lampShape.push(lampShape[0]); //close shape
-
-	//extrusion path
-    const lampPath = [];
-	lampPath.push(new BABYLON.Vector3(0, 0, 0));
-	lampPath.push(new BABYLON.Vector3(0, 10, 0));
-    for(let i = 0; i < 20; i++) {
-        lampPath.push(new BABYLON.Vector3(1 + Math.cos(Math.PI - i * Math.PI / 40), 10 + Math.sin(Math.PI - i * Math.PI / 40), 0));
-    }
-    lampPath.push(new BABYLON.Vector3(3, 11, 0));
-
-    const yellowMat = new BABYLON.StandardMaterial("yellowMat");
-    yellowMat.emissiveColor = BABYLON.Color3.Yellow();
-
-	//extrude lamp
-	const lamp = BABYLON.MeshBuilder.ExtrudeShape("lamp", {cap: BABYLON.Mesh.CAP_END, shape: lampShape, path: lampPath, scale: 0.5});
-	
-    //add bulb
-    const bulb = BABYLON.MeshBuilder.CreateSphere("bulb", {diameterX: 1.5, diameterZ: 0.8});
+        const createScene = function () {
     
-    bulb.material = yellowMat;
-    bulb.parent = lamp;
-    bulb.position.x = 2;
-    bulb.position.y = 10.5;
+    const scene = new BABYLON.Scene(engine);
 
-    lampLight.parent = bulb;
+    const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 1.5, Math.PI / 2.2, 15, new BABYLON.Vector3(0, 0, 0));
+    camera.upperBetaLimit = Math.PI / 2.2;
+    camera.attachControl(canvas, true);
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:50, height: 50})
+    //Switch fountain on and off
+    let switched = false;
+    const pointerDown = (mesh) => {
+        if (mesh === fountain) {
+            switched = !switched;
+            if(switched) {
+                // Start the particle system
+                particleSystem.start();
+            }
+            else {
+                // Stop the particle system
+                particleSystem.stop();
+            }
+        }
 
-	return scene;
-}
+    }
+
+    scene.onPointerObservable.add((pointerInfo) => {      		
+        switch (pointerInfo.type) {
+			case BABYLON.PointerEventTypes.POINTERDOWN:
+				if(pointerInfo.pickInfo.hit) {
+                    pointerDown(pointerInfo.pickInfo.pickedMesh)
+                }
+				break;
+        }
+    });
+    
+    // Create a particle system
+    const particleSystem = new BABYLON.ParticleSystem("particles", 5000);
+
+    //Texture of each particle
+    particleSystem.particleTexture = new BABYLON.Texture("../image/flare.png");
+
+    // Where the particles come from
+    particleSystem.emitter = new BABYLON.Vector3(-4, 0.8, -6); // emitted from the top of the fountain
+    particleSystem.minEmitBox = new BABYLON.Vector3(-0.01, 0, -0.01); // Starting all from
+    particleSystem.maxEmitBox = new BABYLON.Vector3(0.01, 0, 0.01); // To...
+
+    // Colors of all particles
+    particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 1.0);
+    particleSystem.color2 = new BABYLON.Color4(0.2, 0.5, 1.0, 1.0);
+
+    // Size of each particle (random between...
+    particleSystem.minSize = 0.01;
+    particleSystem.maxSize = 0.05;
+
+    // Life time of each particle (random between...
+    particleSystem.minLifeTime = 0.3;
+    particleSystem.maxLifeTime = 1.5;
+
+    // Emission rate
+    particleSystem.emitRate = 1500;
+
+    // Blend mode : BLENDMODE_ONEONE, or BLENDMODE_STANDARD
+    particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
+
+    // Set the gravity of all particles
+    particleSystem.gravity = new BABYLON.Vector3(0, -9.81, 0);
+
+    // Direction of each particle after it has been emitted
+    particleSystem.direction1 = new BABYLON.Vector3(-1, 8, 1);
+    particleSystem.direction2 = new BABYLON.Vector3(1, 8, -1);
+
+    // Power and speed
+    particleSystem.minEmitPower = 0.2;
+    particleSystem.maxEmitPower = 0.6;
+    particleSystem.updateSpeed = 0.01;
+
+    const fountainProfile = [
+		new BABYLON.Vector3(0, 0, 0),
+		new BABYLON.Vector3(0.5, 0, 0),
+        new BABYLON.Vector3(0.5, 0.2, 0),
+		new BABYLON.Vector3(0.4, 0.2, 0),
+        new BABYLON.Vector3(0.4, 0.05, 0),
+        new BABYLON.Vector3(0.05, 0.1, 0),
+		new BABYLON.Vector3(0.05, 0.8, 0),
+		new BABYLON.Vector3(0.15, 0.9, 0)
+	];
+	
+	//Create lathed fountain
+	const fountain = BABYLON.MeshBuilder.CreateLathe("fountain", {shape: fountainProfile, sideOrientation: BABYLON.Mesh.DOUBLESIDE});
+    fountain.position.x = -4;
+    fountain.position.z = -6;
+    
+    //Skybox
+    const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", {size:150}, scene);
+	  const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+	  skyboxMaterial.backFaceCulling = false;
+	  skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("../image/skybox", scene);
+	  skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+	  skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+	  skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+	  skybox.material = skyboxMaterial;
+
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "valleyvillage.glb");
+
+    return scene;
+};
     
 
                 window.initFunction = async function() {

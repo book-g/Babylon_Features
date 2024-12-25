@@ -62,58 +62,57 @@
         var createDefaultEngine = function() {	
 		return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
         
-    
-        const createScene = function () {
-    const scene = new BABYLON.Scene(engine);
+        var createScene = function () {
+	const scene = new BABYLON.Scene(engine);
 
-    const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2.2, Math.PI / 2.2, 15, new BABYLON.Vector3(0, 0, 0));
-    camera.upperBetaLimit = Math.PI / 2.2;
+    const camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 2.2, 50, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(canvas, true);
-    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+	const light = new BABYLON.HemisphericLight("hemi", new BABYLON.Vector3(0, 50, 0));
+    light.intensity = 0.5
+
+    //add a spotlight and later after a mesh lamp post and a bulb have been created
+    //then will make the post a parent to the bulb and 
+    //the bulb to the parent
+    const lampLight = new BABYLON.SpotLight("lampLight", BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, -1, 0), Math.PI, 1, scene);
+    lampLight.diffuse = BABYLON.Color3.Yellow();
+
+	//shape to extrude
+	const lampShape = [];
+    for(let i = 0; i < 20; i++) {
+        lampShape.push(new BABYLON.Vector3(Math.cos(i * Math.PI / 10), Math.sin(i * Math.PI / 10), 0));
+    }
+	lampShape.push(lampShape[0]); //close shape
+
+	//extrusion path
+    const lampPath = [];
+	lampPath.push(new BABYLON.Vector3(0, 0, 0));
+	lampPath.push(new BABYLON.Vector3(0, 10, 0));
+    for(let i = 0; i < 20; i++) {
+        lampPath.push(new BABYLON.Vector3(1 + Math.cos(Math.PI - i * Math.PI / 40), 10 + Math.sin(Math.PI - i * Math.PI / 40), 0));
+    }
+    lampPath.push(new BABYLON.Vector3(3, 11, 0));
+
+    const yellowMat = new BABYLON.StandardMaterial("yellowMat");
+    yellowMat.emissiveColor = BABYLON.Color3.Yellow();
+
+	//extrude lamp
+	const lamp = BABYLON.MeshBuilder.ExtrudeShape("lamp", {cap: BABYLON.Mesh.CAP_END, shape: lampShape, path: lampPath, scale: 0.5});
+	
+    //add bulb
+    const bulb = BABYLON.MeshBuilder.CreateSphere("bulb", {diameterX: 1.5, diameterZ: 0.8});
     
-    light.intensity = 0.1;
+    bulb.material = yellowMat;
+    bulb.parent = lamp;
+    bulb.position.x = 2;
+    bulb.position.y = 10.5;
 
-    BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "lamp.babylon").then(() =>{
-        const lampLight = new BABYLON.SpotLight("lampLight", BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, -1, 0), 0.8 * Math.PI, 0.01, scene);
-        lampLight.diffuse = BABYLON.Color3.Yellow();
-        lampLight.parent = scene.getMeshByName("bulb")
+    lampLight.parent = bulb;
 
-        const lamp = scene.getMeshByName("lamp");
-        lamp.position = new BABYLON.Vector3(2, 0, 2); 
-        lamp.rotation = BABYLON.Vector3.Zero();
-        lamp.rotation.y = -Math.PI / 4;
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:50, height: 50})
 
-        lamp3 = lamp.clone("lamp3");
-        lamp3.position.z = -8;
-
-        lamp1 = lamp.clone("lamp1");
-        lamp1.position.x = -8;
-        lamp1.position.z = 1.2;
-        lamp1.rotation.y = Math.PI / 2;
-
-        lamp2 = lamp1.clone("lamp2");
-        lamp2.position.x = -2.7;
-        lamp2.position.z = 0.8;
-        lamp2.rotation.y = -Math.PI / 2;
-
-    });
+	return scene;
+}
     
-    //Skybox
-    const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", {size:150}, scene);
-	  const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
-	  skyboxMaterial.backFaceCulling = false;
-	  skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("../image/skybox", scene);
-	  skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
-	  skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
-	  skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-	  skybox.material = skyboxMaterial;
-
-    BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "valleyvillage.glb").then(() => {
-        scene.getMeshByName("ground").material.maxSimultaneousLights = 5;
-    });
-    
-    return scene;
-};
 
                 window.initFunction = async function() {
                     
