@@ -73,7 +73,7 @@
     camera.attachControl(canvas, true);
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-    const spriteManagerTrees = new BABYLON.SpriteManager("treesManager", "image/palmtree.png", 2000, {width: 512, height: 1024}, scene);
+    const spriteManagerTrees = new BABYLON.SpriteManager("treesManager", "../image/palmtree.png", 2000, {width: 512, height: 1024}, scene);
 
     //We create trees at random positions
     for (let i = 0; i < 500; i++) {
@@ -94,7 +94,7 @@
     const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", {size:150}, scene);
 	  const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
 	  skyboxMaterial.backFaceCulling = false;
-	  skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("image/skybox", scene);
+	  skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("../image/skybox", scene);
 	  skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 	  skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 	  skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
