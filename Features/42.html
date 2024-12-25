@@ -64,7 +64,7 @@
             var sceneToRender = null;
 
             var createDefaultEngine = function() {
-                return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false });
+                return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: true });
             };
 
             const createScene = function () {
