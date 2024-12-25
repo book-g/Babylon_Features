@@ -44,7 +44,7 @@
          23. [A playground demonstrating how to add reuse materials to apply on individual faces of the objects in your scene.](/Features/23.html)<br>
          24. [A playground wrapping mesh-building code into functions for future repeat use.](/Features/24.html)<br>
       7. Combining Meshes<br>
-         25. [A playground demonstrating how to combine meshes inside of your scene.](/Features/25.html)<br>
+         25. [Bug - A playground demonstrating how to combine meshes inside of your scene.](/Features/25.html)<br>
          26. [A playground demonstrating how to combine meshes while preserving material assignments.](/Features/26.html)<br>
       8. Copying Meshes<br>
          27. [A playground expanding the house building function to accept a width of 1 or 2 for a detached or semi-detached house.](/Features/27.html)<br>
