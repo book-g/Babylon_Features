@@ -122,14 +122,48 @@
   1.  Animation
       1. Introduction to Animations
       2. Designing an Animation
+         68. [An example of basic animation by sliding a box.]()
+         69. [An example of playing an animation forwards and backwards.]()
       3. Description of the Animation Method
+         70. [An example of basic animation by sliding a box.]()
+         71. [An example of sliding a box with direct animation.]()
+         72. [An example of stopping an animation after specific amount of time.]()
       4. Sequencing Animations
+         73. [An example of sequencing animations one after another.]()
       5. Grouping Animations
+         74. [First Example of Animation Groups.]()
+         75. [Second Example of Animation Groups.]()
+         76. [Third Example of Animation Groups.]()
+         77. [Example of adjust an animation group's speed ratio.]()
+         78. [Example of creating an animationGroup by enumerating through the animations contained in an animatable.]()
+         79. [Example of executing code after all animations in an animationGroup finish.]()
+         80. [Demonstrate how to use the mask property]()
       6. Combining Animations
+         81. [The simple slide animation example.]()
+         82. [The simple slide animation with rotation introduced.]()
+         83. [The simple slide animation with faster rotation.]()
+         84. [The simple slide animation with varying rotation rates.]()
+         85. [The simple slide animation with rotation happening first, then sliding.]()
+         86. [The simple slide animation with rotation happening first, then rotation and sliding.]()
       7. Animation Characters
+         87. [Simple example of loading a gltf/glb asset and playing the animation groups tha come with it.]()
+         88. [Load a character and control it's animations with the keyboard.]()
       8. Advanced Animation Methods
+         89. [An example of waiting for the animation end with promises.]()
+         90. [Example of the animation.evaluate() method being used.]()
+         91. [Click on a box to blend a new animation with its current position]()
+         92. [Example of blending animations and animation weights]()
+         93. [Example of blending animations and animation weights]()
+         94. [Demo of converting animations to additive and blending them on top of override animations.]()
+         95. [Additive blending Babylon animation groups to offset a motion path]()
+         96. [Examples of the easing functions available.]()
+         97. [Console logging of the stepId in which a sphere is considered at rest and the rotation value for a rotating box.]()
       9. Animation Using the Render Loop
+         98. [A simple example of animation using the scene's render loop.]()
       10. Baked Texture Animations
+         99. [An example of playing a vertex texture animation.]()
+         100. [An example of playing VATs on instances.]()
+         101. [An example of playing VATs on thin instances.]()
   2.  Audio
       1. Playing Sounds and Music
   3.  Behaviors
