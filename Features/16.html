@@ -72,7 +72,7 @@
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
     // Load the sound and play it automatically once ready
-    const music = new BABYLON.Sound("cello", "sounds/cellolong.wav", scene, null, { loop: true, autoplay: true });
+    const music = new BABYLON.Sound("cello", "../Sound/16.wav", scene, null, { loop: true, autoplay: true });
 
     const box = BABYLON.MeshBuilder.CreateBox("box", {});
     box.position.y = 0.5;
