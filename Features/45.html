@@ -166,13 +166,8 @@
         return;
     }
 } catch (error) {
-    // Log the error for debugging purposes
-    console.error("An error occurred during mesh intersection checks:", error);
-
-    // Optionally, provide additional debug information
-    console.debug("dude children:", dude.getChildren());
-    console.debug("hitBox:", hitBox);
-    console.debug("car mesh:", scene.getMeshByName("car"));
+   
+    console.log(error);
 
     if ( scene.getMeshByName("car").intersectsMesh(hitBox)) {
         return;
