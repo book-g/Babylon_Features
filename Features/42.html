@@ -3,7 +3,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Babylon.js sample code</title>
-        <!-- Babylon.js -->
+       <!--fbxs-->
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylon.fbxFileLoader.min.js"></script>
+        
+ <!-- Babylon.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
         <script src="https://assets.babylonjs.com/generated/Assets.js"></script>
         <script src="https://cdn.babylonjs.com/recast.js"></script>
@@ -13,10 +17,10 @@
         <script src="https://cdn.babylonjs.com/Oimo.js"></script>
         <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
         <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylon.fbxFileLoader.min.js"></script> <!-- Add FBX loader -->
         <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
         <script src="https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
         <script src="https://cdn.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
-        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
         <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
         <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
         <script src="https://cdn.babylonjs.com/addons/babylonjs.addons.min.js"></script>
@@ -41,72 +45,66 @@
                 height: 100%;
             }
         </style>
-		
     </head>
     <body>
         <div id="canvasZone"><canvas id="renderCanvas"></canvas></div>
         <script>
-                    var canvas = document.getElementById("renderCanvas");
+            var canvas = document.getElementById("renderCanvas");
 
-                    var startRenderLoop = function (engine, canvas) {
-                        engine.runRenderLoop(function () {
-                            if (sceneToRender && sceneToRender.activeCamera) {
-                                sceneToRender.render();
-                            }
-                        });
+            var startRenderLoop = function (engine, canvas) {
+                engine.runRenderLoop(function () {
+                    if (sceneToRender && sceneToRender.activeCamera) {
+                        sceneToRender.render();
                     }
+                });
+            }
 
-        var engine = null;
-        var scene = null;
-        var sceneToRender = null;
-        var createDefaultEngine = function() {	
-		return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
-        
-    
-        const createScene = function () {
-    const scene = new BABYLON.Scene(engine);
+            var engine = null;
+            var scene = null;
+            var sceneToRender = null;
 
-    const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 50, new BABYLON.Vector3(0, 0, 0));
-    camera.attachControl(canvas, true);
-    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+            var createDefaultEngine = function() {
+                return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false });
+            };
 
-    // Dude
-    BABYLON.SceneLoader.ImportMeshAsync("him", "../3dmodel", "Start Walking.fbx", scene).then((result) => {
-        var dude = result.meshes[0];
-        dude.scaling = new BABYLON.Vector3(0.25, 0.25, 0.25);
-                
-        scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
-    });
+            const createScene = function () {
+                const scene = new BABYLON.Scene(engine);
+                const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 50, new BABYLON.Vector3(0, 0, 0));
+                camera.attachControl(canvas, true);
+                const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-    return scene;
+                // Dude
+                BABYLON.SceneLoader.ImportMeshAsync("him", "../3dmodel", "Start Walking.fbx", scene).then((result) => {
+                    var dude = result.meshes[0];
+                    dude.scaling = new BABYLON.Vector3(0.25, 0.25, 0.25);
+                    scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
+                });
 
-};
+                return scene;
+            };
 
-
-                window.initFunction = async function() {
-                    
-                    
-                    
-                    var asyncEngineCreation = async function() {
-                        try {
+            window.initFunction = async function() {
+                var asyncEngineCreation = async function() {
+                    try {
                         return createDefaultEngine();
-                        } catch(e) {
+                    } catch(e) {
                         console.log("the available createEngine function failed. Creating the default engine instead");
                         return createDefaultEngine();
-                        }
                     }
+                }
 
-                    window.engine = await asyncEngineCreation();
-        if (!engine) throw 'engine should not be null.';
-        startRenderLoop(engine, canvas);
-        window.scene = createScene();};
-        initFunction().then(() => {sceneToRender = scene
-                    });
+                window.engine = await asyncEngineCreation();
+                if (!engine) throw 'engine should not be null.';
+                startRenderLoop(engine, canvas);
+                window.scene = createScene();
+            };
 
-                    // Resize
-                    window.addEventListener("resize", function () {
-                        engine.resize();
-                    });
+            initFunction().then(() => { sceneToRender = scene });
+
+            // Resize
+            window.addEventListener("resize", function () {
+                engine.resize();
+            });
         </script>
     </body>
 </html>
