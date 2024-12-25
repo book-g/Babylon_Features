@@ -63,6 +63,45 @@
 		return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
         
     
+        const createScene =  () => {
+    const scene = new BABYLON.Scene(engine);
+
+    const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 3, new BABYLON.Vector3(0, 0, 0));
+    camera.attachControl(canvas, true);
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
+    
+    //base
+    const outline = [
+        new BABYLON.Vector3(-0.3, 0, -0.1),
+        new BABYLON.Vector3(0.2, 0, -0.1),
+    ]
+
+    //curved front
+    for (let i = 0; i < 20; i++) {
+        outline.push(new BABYLON.Vector3(0.2 * Math.cos(i * Math.PI / 40), 0, 0.2 * Math.sin(i * Math.PI / 40) - 0.1));
+    }
+
+    //top
+    outline.push(new BABYLON.Vector3(0, 0, 0.1));
+    outline.push(new BABYLON.Vector3(-0.3, 0, 0.1));
+
+    //back formed automatically
+
+    //face UVs
+    const faceUV = [];
+    faceUV[0] = new BABYLON.Vector4(0, 0.5, 0.38, 1);
+    faceUV[1] = new BABYLON.Vector4(0, 0, 1, 0.5);
+    faceUV[2] = new BABYLON.Vector4(0.38, 1, 0, 0.5);
+
+    //material
+    const carMat = new BABYLON.StandardMaterial("carMat");
+    carMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/car.png");
+
+    const car = BABYLON.MeshBuilder.ExtrudePolygon("car", {shape: outline, depth: 0.2, faceUV: faceUV, wrap: true});
+    car.material = carMat;
+
+    return scene;
+}
 
                 window.initFunction = async function() {
                     
