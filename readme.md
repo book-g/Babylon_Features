@@ -9,52 +9,113 @@
   
   ## Starter Scene Code
 
-  1. [CreateScene]()
+  6. [CreateScene]()
 
   ## Introduction
    
   1.  Firsts
       1. First Scene and Model
+         7. [Getting Started First Scene]()
       2. First Model on a Web Page
+         8. [Code]()
       3. First Import of a Model
+         9. [Load a model into a scene.]()
+         10. [Load multiple models into a scene.]()
+         11. [Load a model into a scene and modify their position after loading completes.]()
       4. First App on the Web
+         12. [Import a Model Setup]()
+         13. [Code a Model Setup]()
   2.  Build A Village
       1. Grounding the World
+         14. [A playground showing how to add a basic ground plane to your scene.]()
+         15. [A playground showing how to adjust the position of the box.]()
       2. Adding Sound
+         16. [A playground showing how easy it is to add sound to your scene.]()
+         17. [Set an interval to play a sound every 3 seconds.]()
       3. Place and Scale a Mesh
+         18. [A playground demonstrating different ways to position a mesh in your scene.]()
+         19. [A playground demonstrating how to rotate a mesh in your scene.]()
       4. A Basic House
+         20. [A playground demonstrating how to add a 'prism' roof to your house.]()
       5. Add Texture
+         21. [A playground demonstrating how to add materials to the objects in your scene.]()
       6. Material For Each House Side
+         22. [A playground demonstrating how to add materials to individual faces of the objects in your scene.]()
+         23. [A playground demonstrating how to add reuse materials to apply on individual faces of the objects in your scene.]()
+         24. [A playground wrapping mesh-building code into functions for future repeat use.]()
       7. Combining Meshes
+         25. [A playground demonstrating how to combine meshes inside of your scene.]()
+         26. [A playground demonstrating how to combine meshes while preserving material assignments.]()
       8. Copying Meshes
+         27. [A playground expanding the house building function to accept a width of 1 or 2 for a detached or semi-detached house.]()
+         28. [A playground demonstrating how to create instances of a 3D object.]()
+         29. [Wrapping the house instancing loop into a function.]()
+         30. [An example of how to load a .glb of the starting village into your scene.]()
       9. Changing the Viewer's Camera
+         31. [Code]()
       10. Web App Layout
+         32. [Code]()
   3.  Village Animations
       1. Mesh Parents
+         33. [Simple playground to help demonstrate parenting.]()
       2. Building the Car
+         34. [Simple demonstration showing the basics of extruding meshes.]()
+         35. [Expanding on the basics of extruding meshes.]()
       3. Car Materials
+         36. [Simple demonstration of adding a material to the extruded car body.]() 
+         37. [Simple demonstration of adding a material to the extruded wheels.]()  
       4. Wheel Animation
-      5. Car Animation
+         38. [Simple demonstration of animating one of the car's wheels.]()
+         39. [Adding the wheel animation to all 4 tires.]()
+      5. Car 
+         40. [Simple example of how to animate the car's position forward.]()
+         41. [Add the animating car back into the village.]()
       6. Character Animation
+         42. [Simple example of loading an animated character into your scene.]()
       7. A Walk Around the Village
+         43. [Simple example of animating an object along a path.]()
+         44. [Animate a character walking through the village.]()
   4.  Avoiding Collisions
       1. Avoiding a Car Crash
+         45. [Detect when a car collides with a box and stop the character's animation.]()
+         46. [Detect when a car collides with an invisible box and stop the character's animation.]()
   5.  A Better Environment
       1. Distant Hills
+         47. [Create terrain from a plane with a height map.]()
+         48. [Add a texture to your terrain.]()
+         49. [Add a clearer texture to the area within the village.]()
+         50. [Add the dwellings back into the village scene.]()
+         51. [Add the animating car back into the village scene.]()
       2. Skies Above
+         52. [Adding a Skybox]()  
       3. Sprite Trees
+         53. [Add sprite trees to your scene.]()
+         54. [Add an animated UFO to your scene.]()
   6.  Build a Particle Fountain
       1. A Lathe Turned Fountain
+         55. [Use the createLathe method to create a fountain.]()
+         56. [Add the fountain into the village.]()
       2. Particle Spray
+         57. [Create a basic particle system as water spray.]()
       3. The Switch On Event
+         58. [Start and stop a particle system on click.]()
+         59. [Add the fountain to the village.]()
   7.  Light the Night
       1. Street Lights
+         60. [Create a basic streetlight shape and attach a spotlight.]()
+         61. [Add street lights to the village and adjust the lighting.]()
       2. Day to Night
-      3. Adding Shadows  
+         62. [ Add a gui slider that controls the lighting in the village.]()
+      3. Adding Shadows 
+         63. [Set up a scene for shadows with the shadow generator.]()
+         64. [Adding basic shadows to the village.]() 
   8.  Ways to See The World
       1. Have a Look Around
+         65. [Parent the camera to a character for an over the shoulder angle.]()
       2. Follow That Character
+         66. [ Use the follow cam to follow the character around the village.]()
       3. Going Virtual
+         67. [Code]()
 
   ## Deep Dive
 
