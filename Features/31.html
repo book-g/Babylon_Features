@@ -1,93 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Babylon.js sample code</title>
-        <!-- Babylon.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
-        <script src="https://assets.babylonjs.com/generated/Assets.js"></script>
-        <script src="https://cdn.babylonjs.com/recast.js"></script>
-        <script src="https://cdn.babylonjs.com/ammo.js"></script>
-        <script src="https://cdn.babylonjs.com/havok/HavokPhysics_umd.js"></script>
-        <script src="https://cdn.babylonjs.com/cannon.js"></script>
-        <script src="https://cdn.babylonjs.com/Oimo.js"></script>
-        <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
-        <script src="https://cdn.babylonjs.com/babylon.js"></script>
-        <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
-        <script src="https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
-        <script src="https://cdn.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
-        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-        <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
-        <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
-        <script src="https://cdn.babylonjs.com/addons/babylonjs.addons.min.js"></script>
-        <script src="https://cdn.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
-        <style>
-            html,
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Viewer 1 Example</title>
+
+    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <script>
+        BabylonViewer.viewerManager.getViewerPromiseById('myViewer').then((viewer) => {    
+            viewer.onSceneInitObservable.add(() => {
+                viewer.sceneManager.camera.radius = 15; //set camera radius
+                viewer.sceneManager.camera.beta = Math.PI / 2.2; //angle of depression 
+            });
+            viewer.onEngineInitObservable.add((scene) => {
+                viewer.loadModel({
+                    url: "https://assets.babylonjs.com/meshes/village.glb"
+                });
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            height: 600px;
+        }
+
+        #header {
+            font-size: 6em;
+            padding: 5px;
+        }
+
+        .cell {
+            width:30%;
+            height:40%;
+            margin:1%;
+            float: left;
+            padding: 3px;
+            background-color: #BBBBBB;
+        }
+
+        @media screen and (max-width: 900px) {
+
             body {
-                overflow: hidden;
-                width: 100%;
-                height: 100%;
-                margin: 0;
+                height: unset;
+            }
+
+            .cell {
+                width:unset;
                 padding: 0;
+                font-size:18px;
             }
 
-            #renderCanvas {
-                width: 100%;
-                height: 100%;
-                touch-action: none;
+            .babylon {
+                width:100%;
+                margin: 0;
+                padding: 8px;
+                box-sizing: border-box;
+                background: unset;
             }
-            #canvasZone {
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-		
-    </head>
-    <body>
-        <div id="canvasZone"><canvas id="renderCanvas"></canvas></div>
-        <script>
-                    var canvas = document.getElementById("renderCanvas");
-
-                    var startRenderLoop = function (engine, canvas) {
-                        engine.runRenderLoop(function () {
-                            if (sceneToRender && sceneToRender.activeCamera) {
-                                sceneToRender.render();
-                            }
-                        });
-                    }
-
-        var engine = null;
-        var scene = null;
-        var sceneToRender = null;
-        var createDefaultEngine = function() {	
-		return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
+        }
         
-    
+    </style>
+</head>
+<body>
+    <div id = "header">
+        Viewer News
+    </div>
+    <div class= "cell babylon">
+        <babylon id = "myViewer" extends = "minimal"></babylon>
+    </div>
+    <div class = "cell">
+        3D graphics refers to the creation and manipulation of computer-generated models that simulate three-dimensional objects. These models can be viewed from different angles and can be manipulated as if they were real objects, even though they only exist within the computer.
+    </div>
+    <div class= "cell">
+        3D graphics refers to the creation and manipulation of computer-generated models that simulate three-dimensional objects. These models can be viewed from different angles and can be manipulated as if they were real objects, even though they only exist within the computer.    </div>
+    <div class= "cell">
+        3D graphics refers to the creation and manipulation of computer-generated models that simulate three-dimensional objects. These models can be viewed from different angles and can be manipulated as if they were real objects, even though they only exist within the computer.    </div>
+    <div class= "cell">
+        3D graphics refers to the creation and manipulation of computer-generated models that simulate three-dimensional objects. These models can be viewed from different angles and can be manipulated as if they were real objects, even though they only exist within the computer.    </div>
+    <div class= "cell">
+        3D graphics refers to the creation and manipulation of computer-generated models that simulate three-dimensional objects. These models can be viewed from different angles and can be manipulated as if they were real objects, even though they only exist within the computer.    </div>
 
-                window.initFunction = async function() {
-                    
-                    
-                    
-                    var asyncEngineCreation = async function() {
-                        try {
-                        return createDefaultEngine();
-                        } catch(e) {
-                        console.log("the available createEngine function failed. Creating the default engine instead");
-                        return createDefaultEngine();
-                        }
-                    }
-
-                    window.engine = await asyncEngineCreation();
-        if (!engine) throw 'engine should not be null.';
-        startRenderLoop(engine, canvas);
-        window.scene = createScene();};
-        initFunction().then(() => {sceneToRender = scene
-                    });
-
-                    // Resize
-                    window.addEventListener("resize", function () {
-                        engine.resize();
-                    });
-        </script>
-    </body>
+</body>
 </html>
