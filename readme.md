@@ -224,7 +224,29 @@
 101. [An example of playing VATs on thin instances.]()<br>
 
 ###  2.  Audio
-      1. Playing Sounds and Music
+
+#### 1. Playing Sounds and Music
+
+102. [A simple example of playing sounds or music in your scene.]()
+103. [A simple example loading a sound and playing it once after the file has loaded.]()
+104. [A simple example playing a sound on user interaction.]()
+105. [A simple example unlocking audio on first user interaction]()
+106. [A simple example of playing a portion of a sound file using sound sprites.]()
+
+107. [A simple example of playing a portion of a sound file using sound sprites.]()
+108. [A simple example playing sounds together and synchronized.]()
+109. [A simple example of loading a sound from an ArrayBuffer.]()
+110. [A simple example of loading a sound from the microphone.]()
+111. [A simple example of loading a sound with the asset manager.]()
+
+112. [A simple example of creating spatial sound in your scene.]()
+113. [A simple example of attaching sound to a mesh.]()
+114. [A simple example of spatial directional 3D sound.]()
+115. [ An example of creating a custom attenuation function.]()
+116. [Full audio playground example.]()
+
+
+
 ###  3.  Behaviors
       1. Camera Behaviors
       2. Mesh Behaviors
