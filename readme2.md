@@ -65,3 +65,94 @@
 
 ####      10. Web App Layout<br>
 32. [Code](/Features/32.html)
+
+### 3.  Village Animations
+      
+####  1. Mesh Parents<br>
+33. [Simple playground to help demonstrate parenting.](/Features/33.html)<br>
+
+####  2. Building the Car<br>
+ 34. [Simple demonstration showing the basics of extruding meshes.](/Features/34.html)<br>
+ 35. [Expanding on the basics of extruding meshes.](/Features/35.html)<br>
+
+####  3. Car Materials<br>
+36. [Simple demonstration of adding a material to the extruded car body.](/Features/36.html)<br>
+37. [Simple demonstration of adding a material to the extruded wheels.](/Features/37.html)<br>  
+
+####  4. Wheel Animation<br>
+38. [Simple demonstration of animating one of the car's wheels.](/Features/38.html)<br>
+39. [Adding the wheel animation to all 4 tires.](/Features/39.html)<br>
+
+####  5. Car<br> 
+40. [Simple example of how to animate the car's position forward.](/Features/40.html)<br>
+41. [Add the animating car back into the village.](/Features/41.html)<br>
+
+####  6. Character Animation<br>
+42. [Simple example of loading an animated character into your scene.](/Features/42.html)<br>
+
+####  7. A Walk Around the Village<br>
+
+43. [Simple example of animating an object along a path.](/Features/43.html)<br>
+44. [Animate a character walking through the village.](/Features/44.html)<br>
+  
+### 4.  Avoiding Collisions<br>
+      
+####  1. Avoiding a Car Crash<br>
+
+45. [Detect when a car collides with a box and stop the character's animation.](/Features/45.html)<br>
+46. [Detect when a car collides with an invisible box and stop the character's animation.](/Features/46.html)<br>
+###  5.  A Better Environment
+      
+#### 1. Distant Hills<br>
+
+47. [Create terrain from a plane with a height map.](/Features/47.html)<br>
+48. [Add a texture to your terrain.](/Features/48.html)<br>
+49. [Add a clearer texture to the area within the village.](/Features/49.html)<br>
+50. [Add the dwellings back into the village scene.](/Features/50.html)<br>
+51. [Add the animating car back into the village scene.](/Features/51.html)<br>
+
+#### 2. Skies Above<br>
+52. [Adding a Skybox](/Features/52.html)<br>  
+
+#### 3. Sprite Trees<br>
+53. [Add sprite trees to your scene.](/Features/53.html)<br>
+54. [Add an animated UFO to your scene.](/Features/54.html)<br>
+
+### 6.  Build a Particle Fountain
+
+#### 1. A Lathe Turned Fountain<br>
+55. [Use the createLathe method to create a fountain.](/Features/55.html)
+56. [Add the fountain into the village.](/Features/56.html)
+
+#### 2. Particle Spray<br>
+57. [Create a basic particle system as water spray.](/Features/57.html)
+
+#### 3. The Switch On Event<br>
+
+58. [Start and stop a particle system on click.](/Features/58.html)<br>
+59. [Add the fountain to the village.](/Features/59.html)
+
+### 7.  Light the Night
+      
+#### 1. Street Lights<br>
+60. [Create a basic streetlight shape and attach a spotlight.](/Features/60.html)<br>
+61. [Add street lights to the village and adjust the lighting.](/Features/61.html)
+
+#### 2. Day to Night<br>
+62. [ Add a gui slider that controls the lighting in the village.](/Features/62.html)
+
+#### 3. Adding Shadows<br> 
+63. [Set up a scene for shadows with the shadow generator.](/Features/63.html)<br>
+64. [Adding basic shadows to the village.](/Features/64.html) 
+
+###  8.  Ways to See The World
+      
+####      1. Have a Look Around<br>
+
+65. [Parent the camera to a character for an over the shoulder angle.](/Features/65.html)
+
+####      2. Follow That Character<br>
+66. [ Use the follow cam to follow the character around the village.](/Features/66.html)
+
+####      3. Going Virtual<br>
+67. [Code](/Features/67.html)
