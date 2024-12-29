@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const scene1Button = document.getElementById("scene1");
     const scene2Button = document.getElementById("scene2");
 
-    scene1Button.addEventListener("click", () => loadScene("/js/1.js"));
-    scene2Button.addEventListener("click", () => loadScene("/js/2.js"));
+    scene1Button.addEventListener("click", () => loadScene("js/1.js"));
+    scene2Button.addEventListener("click", () => loadScene("js/2.js"));
 });
 
 function loadScene(sceneFile) {
