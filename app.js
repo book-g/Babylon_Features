@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Serve the main HTML file
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "main.html"));
+    res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
 // Start the server
