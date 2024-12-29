@@ -1,0 +1,16 @@
+{
+  "name": "babylon_features",
+  "version": "1.0.0",
+  "description": "- 1.[Goodbye Sphere](/Journey/1.html)<br>\r - 2.[The ground is red!](/Journey/2.html)<br>\r - 3.[The ground is checkered!](/Journey/3.html)<br>\r - 4.[Yeti on the dance floor!](/Journey/4.html)<br>\r - 5.[Move that camera!](/Journey/5.html)<br>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
