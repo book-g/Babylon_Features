@@ -24,6 +24,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TEST1 }}
-          publish_dir: ./dist
+          publish_dir: ./public
           publish_branch: gh-pages
           enable_debug_log: true

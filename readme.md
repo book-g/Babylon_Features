@@ -1,5 +1,7 @@
 # Journey
 
+//"build": "mkdir dist && cp -R public/* dist",
+    
 
 - 1.[Goodbye Sphere](/Journey/1.html)<br>
 - 2.[The ground is red!](/Journey/2.html)<br>
