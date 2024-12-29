@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]  # Trigger workflow on push to "main"
+    branches: [ "main" ]  # Trigger deployment when changes are pushed to "main"
 
 jobs:
   deploy:
@@ -10,24 +10,23 @@ jobs:
 
     steps:
       # Step 1: Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16  # Use Node.js version 16
+          node-version: 16  # Specify your Node.js version
 
       # Step 3: Install dependencies
       - run: npm install
 
-      # Step 4: Build the app (if needed)
+      # Step 4: Build the project (if applicable)
       - run: npm run build --if-present
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # Deploy the "public" folder
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Use the auto-generated GitHub token
+          publish_dir: ./dist                       # Specify the folder to publish
