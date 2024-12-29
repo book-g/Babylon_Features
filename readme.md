@@ -1,194 +1,196 @@
 # Journey
 
- 1. [Goodbye Sphere](/Journey/1.html)<br>
- 2. [The ground is red!](/Journey/2.html)<br>
- 3. [The ground is checkered!](/Journey/3.html)<br>
- 4. [Yeti on the dance floor!](/Journey/4.html)<br>
- 5. [Move that camera!](/Journey/5.html)<br>
+
+- 1. [Goodbye Sphere](/Journey/1.html)<br>
+- 2. [The ground is red!](/Journey/2.html)<br>
+- 3. [The ground is checkered!](/Journey/3.html)<br>
+- 4. [Yeti on the dance floor!](/Journey/4.html)<br>
+- 5. [Move that camera!](/Journey/5.html)<br>
 
 # Features
   
 ## Starter Scene Code
 
-6. [CreateScene](/Features/6.html)<br>
+- 6. [CreateScene](/Features/6.html)<br>
 
 ### 1. Firsts
 
 #### 1. First Scene and Model<br>
 
-7. [Getting Started First Scene](/Features/7.html)<br>
+- 7. [Getting Started First Scene](/Features/7.html)<br>
 
 #### 2. First Model on a Web Page<br>
-8. [Code](/Features/8.html)<br>
+
+- 8. [Code](/Features/8.html)<br>
 
 #### 3. First Import of a Model<br>
 
-9. [Load a model into a scene.](/Features/9.html)<br>
-10. [Load multiple models into a scene.](/Features/10.html)<br>
-11. [Load a model into a scene and modify their position after loading completes.](/Features/11.html)<br>
+- 9. [Load a model into a scene.](/Features/9.html)<br>
+- 10. [Load multiple models into a scene.](/Features/10.html)<br>
+- 11. [Load a model into a scene and modify their position after loading completes.](/Features/11.html)<br>
 
 #### 4. First App on the Web<br>
 
-12. [Import a Model Setup](/Features/12.html)<br>
-13. [Code a Model Setup](/Features/13.html)<br>
+- 12. [Import a Model Setup](/Features/12.html)<br>
+- 13. [Code a Model Setup](/Features/13.html)<br>
 
 ### 2.  Build A Village
   
 ####      1. Grounding the World<br>
 
-14. [A playground showing how to add a basic ground plane to your scene.](/Features/14.html)<br>
-15. [A playground showing how to adjust the position of the box.](/Features/15.html)<br>
+- 14. [A playground showing how to add a basic ground plane to your scene.](/Features/14.html)<br>
+- 15. [A playground showing how to adjust the position of the box.](/Features/15.html)<br>
 
 ####      2. Adding Sound<br>
          
-16. [A playground showing how easy it is to add sound to your scene.](/Features/16.html)<br>
-17. [Set an interval to play a sound every 3 seconds.](/Features/17.html)<br>
+- 16. [A playground showing how easy it is to add sound to your scene.](/Features/16.html)<br>
+- 17. [Set an interval to play a sound every 3 seconds.](/Features/17.html)<br>
 
 ####     3. Place and Scale a Mesh<br>
 
-18. [A playground demonstrating different ways to position a mesh in your scene.](/Features/18.html)<br>
-19. [A playground demonstrating how to rotate a mesh in your scene.](/Features/19.html)<br>
+- 18. [A playground demonstrating different ways to position a mesh in your scene.](/Features/18.html)<br>
+- 19. [A playground demonstrating how to rotate a mesh in your scene.](/Features/19.html)<br>
 
 ####      4. A Basic House<br>
 
-20. [A playground demonstrating how to add a 'prism' roof to your house.](/Features/20.html)<br>
+- 20. [A playground demonstrating how to add a 'prism' roof to your house.](/Features/20.html)<br>
 
 ####      5. Add Texture<br>
 
-21. [A playground demonstrating how to add materials to the objects in your scene.](/Features/21.html)<br>
+- 21. [A playground demonstrating how to add materials to the objects in your scene.](/Features/21.html)<br>
 
 ####      6. Material For Each House Side<br>
 
-22. [A playground demonstrating how to add materials to individual faces of the objects in your scene.](/Features/22.html)<br>
-23. [A playground demonstrating how to add reuse materials to apply on individual faces of the objects in your scene.](/Features/23.html)<br>
-24. [A playground wrapping mesh-building code into functions for future repeat use.](/Features/24.html)<br>
+- 22. [A playground demonstrating how to add materials to individual faces of the objects in your scene.](/Features/22.html)<br>
+- 23. [A playground demonstrating how to add reuse materials to apply on individual faces of the objects in your scene.](/Features/23.html)<br>
+- 24. [A playground wrapping mesh-building code into functions for future repeat use.](/Features/24.html)<br>
 
 ####      7. Combining Meshes<br>
 
-25. [Bug - A playground demonstrating how to combine meshes inside of your scene.](/Features/25.html)<br>
-26. [A playground demonstrating how to combine meshes while preserving material assignments.](/Features/26.html)<br>
+- 25. [Bug - A playground demonstrating how to combine meshes inside of your scene.](/Features/25.html)<br>
+- 26. [A playground demonstrating how to combine meshes while preserving material assignments.](/Features/26.html)<br>
 
 ####      8. Copying Meshes<br>
 
-27. [A playground expanding the house building function to accept a width of 1 or 2 for a detached or semi-detached house.](/Features/27.html)<br>
-28. [A playground demonstrating how to create instances of a 3D object.](/Features/28.html)<br>
-29. [Wrapping the house instancing loop into a function.](/Features/29.html)<br>
-30. [An example of how to load a .glb of the starting village into your scene.](/Features/30.html)<br>
+- 27. [A playground expanding the house building function to accept a width of 1 or 2 for a detached or semi-detached house.](/Features/27.html)<br>
+- 28. [A playground demonstrating how to create instances of a 3D object.](/Features/28.html)<br>
+- 29. [Wrapping the house instancing loop into a function.](/Features/29.html)<br>
+- 30. [An example of how to load a .glb of the starting village into your scene.](/Features/30.html)<br>
 
 ####     9. Changing the Viewer's Camera<br>
 
-31. [Code](/Features/31.html)<br>
+- 31. [Code](/Features/31.html)<br>
 
 ####      10. Web App Layout<br>
 
-32. [Code](/Features/32.html)
+- 32. [Code](/Features/32.html)
 
 ### 3.  Village Animations
       
 ####  1. Mesh Parents<br>
 
-33. [Simple playground to help demonstrate parenting.](/Features/33.html)<br>
+- 33. [Simple playground to help demonstrate parenting.](/Features/33.html)<br>
 
 ####  2. Building the Car<br>
 
- 34. [Simple demonstration showing the basics of extruding meshes.](/Features/34.html)<br>
- 35. [Expanding on the basics of extruding meshes.](/Features/35.html)<br>
+- 34. [Simple demonstration showing the basics of extruding meshes.](/Features/34.html)<br>
+- 35. [Expanding on the basics of extruding meshes.](/Features/35.html)<br>
 
 ####  3. Car Materials<br>
 
-36. [Simple demonstration of adding a material to the extruded car body.](/Features/36.html)<br>
-37. [Simple demonstration of adding a material to the extruded wheels.](/Features/37.html)<br>  
+- 36. [Simple demonstration of adding a material to the extruded car body.](/Features/36.html)<br>
+- 37. [Simple demonstration of adding a material to the extruded wheels.](/Features/37.html)<br>  
 
 ####  4. Wheel Animation<br>
 
-38. [Simple demonstration of animating one of the car's wheels.](/Features/38.html)<br>
-39. [Adding the wheel animation to all 4 tires.](/Features/39.html)<br>
+- 38. [Simple demonstration of animating one of the car's wheels.](/Features/38.html)<br>
+- 39. [Adding the wheel animation to all 4 tires.](/Features/39.html)<br>
 
 ####  5. Car<br> 
 
-40. [Simple example of how to animate the car's position forward.](/Features/40.html)<br>
-41. [Add the animating car back into the village.](/Features/41.html)<br>
+- 40. [Simple example of how to animate the car's position forward.](/Features/40.html)<br>
+- 41. [Add the animating car back into the village.](/Features/41.html)<br>
 
 ####  6. Character Animation<br>
 
-42. [Simple example of loading an animated character into your scene.](/Features/42.html)<br>
+- 42. [Simple example of loading an animated character into your scene.](/Features/42.html)<br>
 
 ####  7. A Walk Around the Village<br>
 
-43. [Simple example of animating an object along a path.](/Features/43.html)<br>
-44. [Animate a character walking through the village.](/Features/44.html)<br>
+- 43. [Simple example of animating an object along a path.](/Features/43.html)<br>
+- 44. [Animate a character walking through the village.](/Features/44.html)<br>
   
 ### 4.  Avoiding Collisions<br>
       
 ####  1. Avoiding a Car Crash<br>
 
-45. [Detect when a car collides with a box and stop the character's animation.](/Features/45.html)<br>
-46. [Detect when a car collides with an invisible box and stop the character's animation.](/Features/46.html)<br>
+- 45. [Detect when a car collides with a box and stop the character's animation.](/Features/45.html)<br>
+- 46. [Detect when a car collides with an invisible box and stop the character's animation.](/Features/46.html)<br>
 
 ###  5.  A Better Environment
       
 #### 1. Distant Hills<br>
 
-47. [Create terrain from a plane with a height map.](/Features/47.html)<br>
-48. [Add a texture to your terrain.](/Features/48.html)<br>
-49. [Add a clearer texture to the area within the village.](/Features/49.html)<br>
-50. [Add the dwellings back into the village scene.](/Features/50.html)<br>
-51. [Add the animating car back into the village scene.](/Features/51.html)<br>
+- 47. [Create terrain from a plane with a height map.](/Features/47.html)<br>
+- 48. [Add a texture to your terrain.](/Features/48.html)<br>
+- 49. [Add a clearer texture to the area within the village.](/Features/49.html)<br>
+- 50. [Add the dwellings back into the village scene.](/Features/50.html)<br>
+- 51. [Add the animating car back into the village scene.](/Features/51.html)<br>
 
 #### 2. Skies Above<br>
 
-52. [Adding a Skybox](/Features/52.html)<br>  
+- 52. [Adding a Skybox](/Features/52.html)<br>  
 
 #### 3. Sprite Trees<br>
 
-53. [Add sprite trees to your scene.](/Features/53.html)<br>
-54. [Add an animated UFO to your scene.](/Features/54.html)<br>
+- 53. [Add sprite trees to your scene.](/Features/53.html)<br>
+- 54. [Add an animated UFO to your scene.](/Features/54.html)<br>
 
 ### 6.  Build a Particle Fountain
 
 #### 1. A Lathe Turned Fountain<br>
 
-55. [Use the createLathe method to create a fountain.](/Features/55.html)
-56. [Add the fountain into the village.](/Features/56.html)
+- 55. [Use the createLathe method to create a fountain.](/Features/55.html)
+- 56. [Add the fountain into the village.](/Features/56.html)
 
 #### 2. Particle Spray<br>
 
-57. [Create a basic particle system as water spray.](/Features/57.html)
+- 57. [Create a basic particle system as water spray.](/Features/57.html)
 
 #### 3. The Switch On Event<br>
 
-58. [Start and stop a particle system on click.](/Features/58.html)<br>
-59. [Add the fountain to the village.](/Features/59.html)
+- 58. [Start and stop a particle system on click.](/Features/58.html)<br>
+- 59. [Add the fountain to the village.](/Features/59.html)
 
 ### 7.  Light the Night
       
 #### 1. Street Lights<br>
 
-60. [Create a basic streetlight shape and attach a spotlight.](/Features/60.html)<br>
-61. [Add street lights to the village and adjust the lighting.](/Features/61.html)
+- 60. [Create a basic streetlight shape and attach a spotlight.](/Features/60.html)<br>
+- 61. [Add street lights to the village and adjust the lighting.](/Features/61.html)
 
 #### 2. Day to Night<br>
 
-62. [ Add a gui slider that controls the lighting in the village.](/Features/62.html)
+- 62. [ Add a gui slider that controls the lighting in the village.](/Features/62.html)
 
 #### 3. Adding Shadows<br> 
 
-63. [Set up a scene for shadows with the shadow generator.](/Features/63.html)<br>
-64. [Adding basic shadows to the village.](/Features/64.html) 
+- 63. [Set up a scene for shadows with the shadow generator.](/Features/63.html)<br>
+- 64. [Adding basic shadows to the village.](/Features/64.html) 
 
 ###  8.  Ways to See The World
       
 ####      1. Have a Look Around<br>
 
-65. [Parent the camera to a character for an over the shoulder angle.](/Features/65.html)
+- 65. [Parent the camera to a character for an over the shoulder angle.](/Features/65.html)
 
 ####      2. Follow That Character<br>
 
-66. [ Use the follow cam to follow the character around the village.](/Features/66.html)
+- 66. [ Use the follow cam to follow the character around the village.](/Features/66.html)
 
 ####      3. Going Virtual<br>
 
-67. [Code](/Features/67.html)
+- 67. [Code](/Features/67.html)
 
 
 ## Deep Dive
@@ -199,85 +201,86 @@
 
 ####      2. Designing an Animation<br>
 
-68. [An example of basic animation by sliding a box.]()<br>
-69. [An example of playing an animation forwards and backwards.]()
+- 68. [An example of basic animation by sliding a box.]()<br>
+- 69. [An example of playing an animation forwards and backwards.]()
 
 ####      3. Description of the Animation Method<br>
          
-70. [An example of basic animation by sliding a box.]()<br>
-71. [An example of sliding a box with direct animation.]()<br>
-72. [An example of stopping an animation after specific amount of time.]()<br>
+- 70. [An example of basic animation by sliding a box.]()<br>
+- 71. [An example of sliding a box with direct animation.]()<br>
+- 72. [An example of stopping an animation after specific amount of time.]()<br>
 
 ####      4. Sequencing Animations<br>
          
-73. [An example of sequencing animations one after another.]()<br>
+- 73. [An example of sequencing animations one after another.]()<br>
 
 ####      5. Grouping Animations<br>
 
-74. [First Example of Animation Groups.]()<br>
-75. [Second Example of Animation Groups.]()<br>
-76. [Third Example of Animation Groups.]()<br>
-77. [Example of adjust an animation group's speed ratio.]()<br>
-78. [Example of creating an animationGroup by enumerating through the animations contained in an animatable.]()<br>
-79. [Example of executing code after all animations in an animationGroup finish.]()<br>
-80. [Demonstrate how to use the mask property]()<br>
+- 74. [First Example of Animation Groups.]()<br>
+- 75. [Second Example of Animation Groups.]()<br>
+- 76. [Third Example of Animation Groups.]()<br>
+- 77. [Example of adjust an animation group's speed ratio.]()<br>
+- 78. [Example of creating an animationGroup by enumerating through the animations contained in an animatable.]()<br>
+- 79. [Example of executing code after all animations in an animationGroup finish.]()<br>
+- 80. [Demonstrate how to use the mask property]()<br>
 
 ####      6. Combining Animations
 
-81. [The simple slide animation example.]()<br>
-82. [The simple slide animation with rotation introduced.]()<br>
-83. [The simple slide animation with faster rotation.]()<br>
-84. [The simple slide animation with varying rotation rates.]()<br>
-85. [The simple slide animation with rotation happening first, then sliding.]()<br>
-86. [The simple slide animation with rotation happening first, then rotation and sliding.]()<br>
+- 81. [The simple slide animation example.]()<br>
+- 82. [The simple slide animation with rotation introduced.]()<br>
+- 83. [The simple slide animation with faster rotation.]()<br>
+- 84. [The simple slide animation with varying rotation rates.]()<br>
+- 85. [The simple slide animation with rotation happening first, then sliding.]()<br>
+- 86. [The simple slide animation with rotation happening first, then rotation and sliding.]()<br>
 
 ####      7. Animation Characters<br>
-87. [Simple example of loading a gltf/glb asset and playing the animation groups tha come with it.]()<br>
-88. [Load a character and control it's animations with the keyboard.]()<br>
+
+- 87. [Simple example of loading a gltf/glb asset and playing the animation groups tha come with it.]()<br>
+- 88. [Load a character and control it's animations with the keyboard.]()<br>
 
 ####      8. Advanced Animation Methods<br>
 
-89. [An example of waiting for the animation end with promises.]()<br>
-90. [Example of the animation.evaluate() method being used.]()<br>
-91. [Click on a box to blend a new animation with its current position]()<br>
-92. [Example of blending animations and animation weights]()<br>
-93. [Example of blending animations and animation weights]()<br>
-94. [Demo of converting animations to additive and blending them on top of override animations.]()<br>
-95. [Additive blending Babylon animation groups to offset a motion path]()<br>
-96. [Examples of the easing functions available.]()<br>
-97. [Console logging of the stepId in which a sphere is considered at rest and the rotation value for a rotating box.]()<br>
+- 89. [An example of waiting for the animation end with promises.]()<br>
+- 90. [Example of the animation.evaluate() method being used.]()<br>
+- 91. [Click on a box to blend a new animation with its current position]()<br>
+- 92. [Example of blending animations and animation weights]()<br>
+- 93. [Example of blending animations and animation weights]()<br>
+- 94. [Demo of converting animations to additive and blending them on top of override animations.]()<br>
+- 95. [Additive blending Babylon animation groups to offset a motion path]()<br>
+- 96. [Examples of the easing functions available.]()<br>
+- 97. [Console logging of the stepId in which a sphere is considered at rest and the rotation value for a rotating box.]()<br>
 
 ####      9. Animation Using the Render Loop<br>
 
-98. [A simple example of animation using the scene's render loop.]()<br>
+- 98. [A simple example of animation using the scene's render loop.]()<br>
 
 ####      10. Baked Texture Animations<br>
 
-99. [An example of playing a vertex texture animation.]()<br>
-100. [An example of playing VATs on instances.]()<br>
-101. [An example of playing VATs on thin instances.]()<br>
+- 99. [An example of playing a vertex texture animation.]()<br>
+- 100. [An example of playing VATs on instances.]()<br>
+- 101. [An example of playing VATs on thin instances.]()<br>
 
 ###  2.  Audio
 
 #### 1. Playing Sounds and Music
 
-102. [A simple example of playing sounds or music in your scene.]()
-103. [A simple example loading a sound and playing it once after the file has loaded.]()
-104. [A simple example playing a sound on user interaction.]()
-105. [A simple example unlocking audio on first user interaction]()
-106. [A simple example of playing a portion of a sound file using sound sprites.]()
+- 102. [A simple example of playing sounds or music in your scene.]()
+- 103. [A simple example loading a sound and playing it once after the file has loaded.]()
+- 104. [A simple example playing a sound on user interaction.]()
+- 105. [A simple example unlocking audio on first user interaction]()
+- 106. [A simple example of playing a portion of a sound file using sound sprites.]()
 
-107. [A simple example of playing a portion of a sound file using sound sprites.]()
-108. [A simple example playing sounds together and synchronized.]()
-109. [A simple example of loading a sound from an ArrayBuffer.]()
-110. [A simple example of loading a sound from the microphone.]()
-111. [A simple example of loading a sound with the asset manager.]()
+- 107. [A simple example of playing a portion of a sound file using sound sprites.]()
+- 108. [A simple example playing sounds together and synchronized.]()
+- 109. [A simple example of loading a sound from an ArrayBuffer.]()
+- 110. [A simple example of loading a sound from the microphone.]()
+- 111. [A simple example of loading a sound with the asset manager.]()
 
-112. [A simple example of creating spatial sound in your scene.]()
-113. [A simple example of attaching sound to a mesh.]()
-114. [A simple example of spatial directional 3D sound.]()
-115. [ An example of creating a custom attenuation function.]()
-116. [Full audio playground example.]()
+- 112. [A simple example of creating spatial sound in your scene.]()
+- 113. [A simple example of attaching sound to a mesh.]()
+- 114. [A simple example of spatial directional 3D sound.]()
+- 115. [ An example of creating a custom attenuation function.]()
+- 116. [Full audio playground example.]()
 
 
 
@@ -285,15 +288,15 @@
 
 ####  1. Camera Behaviors
 
-117. [A simple example of the camera bouncing behavior.]()
-118. [A simple example of the camera AutoRotation behavior.]()
-119. [A simple example of the camera Framing behavior.]()
+- 117. [A simple example of the camera bouncing behavior.]()
+- 118. [A simple example of the camera AutoRotation behavior.]()
+- 119. [A simple example of the camera Framing behavior.]()
 
 ####  2. Mesh Behaviors
 
-120. [A simple example of the pointerDragBehavior.]()
-121. [A simple example of SixDofDragBehavior with single or multipoint support.]()
-122. [A simple example of AttachToBoxBehavior.]()
+- 120. [A simple example of the pointerDragBehavior.]()
+- 121. [A simple example of SixDofDragBehavior with single or multipoint support.]()
+- 122. [A simple example of AttachToBoxBehavior.]()
 
 
 ###  4.  Cameras
