@@ -809,6 +809,7 @@ class Code_1_25{
     `;
     
     
+    //A playground demonstrating how to combine meshes inside of your scene.
     static c25 = 
     `
     const createScene =  () => {
