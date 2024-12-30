@@ -492,7 +492,7 @@ function parseHierarchy(text) {
         }
     }
 
-    return root;
+    return lines;
 }
 
 var da = parseHierarchy(text);
