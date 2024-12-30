@@ -218,7 +218,7 @@ class Code_1_25{
     
     //---
     
-    static c8 = 
+    static h8 = 
     `
     <html lang="en">
         <body>
