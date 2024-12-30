@@ -1,10 +1,9 @@
-var text =
-`# Journey
-- 1.Goodbye Sphere
-- 2.The ground is red!
-- 3.The ground is checkered!
-- 4.Yeti on the dance floor!
-- 5.Move that camera!
+# Journey
+1.Goodbye Sphere
+2.The ground is red!
+3.The ground is checkered!
+4.Yeti on the dance floor!
+5.Move that camera!
 # Features
 ## Starter Scene Code
 - 6.CreateScene
@@ -457,43 +456,3 @@ var text =
 ####     7.WebXR Demos and Examples
 ####      8.WebXR Input and Controller Support
 ####      9.WebXR Augmented Reality Features
-`;
-
-function parseHierarchy(text) {
-    const lines = text.trim().split("\n");
-    const stack = [];
-    const root = new Map();
-
-    let currentMap = root;
-
-    for (const line of lines) {
-        const match = line.match(/^(\s*)(#*\s*|\d+\.\s*|- )(.+)$/);
-
-        if (match) {
-            const [, spaces, prefix, content] = match;
-            const level = spaces.length + prefix.trim().length; // Determine the nesting level
-
-            const newEntry = new Map();
-
-            while (stack.length && stack[stack.length - 1].level >= level) {
-                stack.pop(); // Adjust stack to the current level
-            }
-
-            if (stack.length) {
-                const parentMap = stack[stack.length - 1].map;
-                if (!parentMap.has(content)) {
-                    parentMap.set(content, newEntry);
-                }
-            } else {
-                root.set(content, newEntry);
-            }
-
-            stack.push({ level, map: newEntry });
-        }
-    }
-
-    return root;
-}
-
-var da = parseHierarchy(text);
-console.log(da);
