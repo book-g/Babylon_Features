@@ -5,17 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babylon.js Modular Example</title>
     <link rel="stylesheet" href="css/style.css">
-    
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
 </head>
 <body>
-    <canvas id="renderCanvas"></canvas>
+    <!-- <canvas id="renderCanvas"></canvas>
     <nav>
         <button id="scene1">Load Scene 1</button>
         <button id="scene2">Load Scene 2</button>
-    </nav>
-    <script src="js/common.js"></script>
+    </nav> -->
+    <!-- <script src="js/common.js"></script>
     <script src="js/main.js"></script>
-    gobal1w
+    <script src="js/map_pattern.js"></script>
+    <script src="js/hierarchy.js"></script>
+
+    <div id="hierarchicalStructure"></div> -->
+
+    <!-- Main content -->
+    <script src="js/main.js"></script>
+    <script src="js/map_pattern.js"></script>
+    <script src="js/hierarchy.js"></script>
+
+
+    <div id="mySidebar" class="sidebar">
+        <div id="hierarchicalStructure"></div>
+      </div>
+
+<div id="main">
+    <button id="toggleButton" class="toggle-btn">☰</button>
+    
+    
+   
+  </div>
+
+    <script>
+        // Toggle the sidebar
+        function toggleSidebar() {
+          const sidebar = document.getElementById("mySidebar");
+          const main = document.getElementById("main");
+          const button = document.getElementById("toggleButton");
+        
+          var width = "400px";
+          if (sidebar.style.width === width) {
+            // Close the sidebar
+            sidebar.style.width = "0";
+            main.style.marginLeft = "0";
+            button.textContent = "☰";
+          } else {
+            // Open the sidebar
+            sidebar.style.width = width;
+            main.style.marginLeft = width;
+            button.textContent = "x";
+          }
+        }
+        
+        // Attach toggle function to the button
+        document.getElementById("toggleButton").addEventListener("click", toggleSidebar);
+        </script>
+        
+
 </body>
 </html>
