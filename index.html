@@ -157,6 +157,10 @@ var createScene = function () {
     // Add a light
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
+    var music = new BABYLON.Sound("cello", "sound/16.wav", scene, null, { loop: true, autoplay: true,volume:1 });
+
+   
+    
     // Load the 3D model
     BABYLON.SceneLoader.ImportMeshAsync("", "3dmodel/", "house_dancing.glb", scene)
         .then((result) => {
