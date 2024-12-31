@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babylon.js Modular Example</title>
+    <title>Babylon.js Learn & Practice Notes</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+    <script src="https://assets.babylonjs.com/generated/Assets.js"></script>
+    <script src="https://cdn.babylonjs.com/recast.js"></script>
+    <script src="https://cdn.babylonjs.com/ammo.js"></script>
+    <script src="https://cdn.babylonjs.com/havok/HavokPhysics_umd.js"></script>
+    <script src="https://cdn.babylonjs.com/cannon.js"></script>
+    <script src="https://cdn.babylonjs.com/Oimo.js"></script>
+    <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+    <script src="https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+    <script src="https://cdn.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <script src="https://cdn.babylonjs.com/addons/babylonjs.addons.min.js"></script>
+    <script src="https://cdn.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+    <!-- Include Prism.js CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+<!-- Include Prism.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<!-- Include JavaScript and Markup (HTML) support -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+
+<!-- CodeMirror CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css">
+
+<!-- CodeMirror JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"></script>
+
+<!-- CodeMirror JavaScript Mode for JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/javascript/javascript.min.js"></script>
+
+
 </head>
 <body>
     <!-- <canvas id="renderCanvas"></canvas>
@@ -21,22 +56,58 @@
     <div id="hierarchicalStructure"></div> -->
 
     <!-- Main content -->
-    <script src="js/main.js"></script>
+    <script src="js/code_1_25.js"></script>
+    <script src="js/code_26_50.js"></script>
+    <script src="js/code_51_75.js"></script>
+    
+    
     <script src="js/map_pattern.js"></script>
+    <script src="js/page_mapper.js"></script>
+    <script src="js/code_list.js"></script>
     <script src="js/hierarchy.js"></script>
+    <script src="js/common.js"></script>
+
 
 
     <div id="mySidebar" class="sidebar">
+        Gobal Krishnan V <br>
+        <address>gobalkrishnan.books@gmail.com</address>
         <div id="hierarchicalStructure"></div>
       </div>
 
 <div id="main">
-    <button id="toggleButton" class="toggle-btn">☰</button>
+
+   
+ <canvas id="renderCanvas"></canvas>
+
     
+    <!-- Code Modal -->
+    <div id="codeModal">
+      <button id="closeCodeModal">Close</button>
+      
+      <!-- <pre id="codeDisplay"><code class="language-javascript">// Code will appear here</code></pre>
+       -->
+      <div id="codeEditor"></div>
+      <button id="runCodeButton">Run Code</button>
+
+  </div>
+
+  <!-- View Code Button -->
+  <button id="toggleCodeButton">View Code</button>
+   
+    
+  
+
+
+    <button id="toggleButton" class="toggle-btn">☰</button>
+    <!-- <div id="canvasZone"><canvas id="renderCanvas"></canvas></div> -->
+
     
    
   </div>
+  
 
+   
     <script>
         // Toggle the sidebar
         function toggleSidebar() {
@@ -62,6 +133,118 @@
         document.getElementById("toggleButton").addEventListener("click", toggleSidebar);
         </script>
         
+        <script>
+var test1 = `
+var createScene = function () {
+    // Create the scene
+    var scene = new BABYLON.Scene(engine);
+
+    // Set the background color to white
+    scene.clearColor = new BABYLON.Color4(1, 1, 1, 1); // RGBA for white
+
+    // Add a camera
+    var camera = new BABYLON.ArcRotateCamera(
+        "camera",
+        -Math.PI / 2,
+        Math.PI / 2.5,
+        50,
+        new BABYLON.Vector3(0, 0, 0)
+    );
+    camera.attachControl(canvas, true);
+
+    // Add a light
+    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+
+    // Load the 3D model
+    BABYLON.SceneLoader.ImportMeshAsync("", "3dmodel/", "dance_alien.glb", scene)
+        .then((result) => {
+            var dude = result.meshes[0]; // The root mesh
+            dude.scaling = new BABYLON.Vector3(10.0, 10.0, 10.0);
+
+            // Center the object
+            const boundingInfo = dude.getBoundingInfo();
+            const center = boundingInfo.boundingBox.centerWorld;
+
+            // Translate the object to center it
+            dude.position = dude.position.subtract(center);
+
+            // Begin animation if skeletons are available
+            if (result.skeletons.length > 0) {
+                scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
+            }
+
+            // Add Text Overlay
+            addOverlayText(scene);
+        })
+        .catch((error) => {
+            console.error("Failed to load model:", error);
+        });
+
+    return scene;
+};
+
+// Function to add overlay text
+function addOverlayText(scene) {
+    // Create an advanced dynamic texture for overlay
+    var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+
+    // Add the "Babylon.js" text with gradient
+    var babylonText = new BABYLON.GUI.TextBlock();
+    babylonText.text = "Babylon.js";
+    babylonText.color = "black";
+    babylonText.fontSize = "50px";
+    babylonText.fontWeight = "bold";
+    babylonText.top = "200px"; // Position below the model
+    advancedTexture.addControl(babylonText);
+
+    // Add "Gobal Krishnan V" text
+    var nameText = new BABYLON.GUI.TextBlock();
+    nameText.text = "Gobal Krishnan V";
+    nameText.color = "black";
+    nameText.fontSize = "20px";
+    nameText.top = "250px"; // Position below the Babylon.js text
+    advancedTexture.addControl(nameText);
+
+    // Add email text
+    var emailText = new BABYLON.GUI.TextBlock();
+    emailText.text = "gobalkrishnan.books@gmail.com";
+    emailText.color = "gray";
+    emailText.fontSize = "15px";
+    emailText.top = "280px"; // Position below the name
+    advancedTexture.addControl(emailText);
+}
+
+`;
+var c1 = 
+    `var createScene = function () {
+        // This creates a basic Babylon Scene object (non-mesh)
+        var scene = new BABYLON.Scene(engine);
+    
+        // This creates and positions a free camera (non-mesh)
+        var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+    
+        // This targets the camera to scene origin
+        camera.setTarget(BABYLON.Vector3.Zero());
+    
+        // This attaches the camera to the canvas
+        camera.attachControl(canvas, true);
+    
+        // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
+        var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+    
+        // Default intensity is 1. Let's dim the light a small amount
+        light.intensity = 0.7;
+    
+        // Our built-in 'ground' shape.
+        var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+    
+        return scene;
+    }; `; 
+
+loadSceneCode(test1);
+        </script>
+
+
 
 </body>
 </html>

@@ -21,10 +21,41 @@ function createDefaultEngine() {
     });
 }
 
+// function initFunction(createSceneFunction) {
+//     try {
+//         if (!engine) {
+//             engine = createDefaultEngine();
+//         }
+
+//         if (!engine) {
+//             throw new Error("Babylon.js Engine could not be created.");
+//         }
+
+//         startRenderLoop(engine, canvas);
+
+//         if (scene) {
+//             scene.dispose();
+//         }
+
+//         scene = createSceneFunction();
+//     } catch (e) {
+//         console.error("Initialization failed:", e);
+//     }
+// }
+
 function initFunction(createSceneFunction) {
     try {
+        const canvas = document.getElementById("renderCanvas");
+        if (!canvas) {
+            throw new Error("Canvas element not found. Ensure the canvas ID is correct.");
+        }
+
         if (!engine) {
-            engine = createDefaultEngine();
+            engine = new BABYLON.Engine(canvas, true, {
+                preserveDrawingBuffer: true,
+                stencil: true,
+                disableWebGL2Support: false,
+            });
         }
 
         if (!engine) {
@@ -42,6 +73,7 @@ function initFunction(createSceneFunction) {
         console.error("Initialization failed:", e);
     }
 }
+
 
 window.addEventListener("resize", () => {
     if (engine) {

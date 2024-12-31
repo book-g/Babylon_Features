@@ -1,1284 +1,254 @@
-var root_content = {
+function loadScene(sceneFile) {
+    const existingScript = document.querySelector(`script[src="${sceneFile}"]`);
+    if (existingScript) existingScript.remove();
 
-    "Babylon Learning": [{
-            "Journey": [{
-                    "Goodbye Sphere": []
-                },
-                {
-                    "The ground is red!": []
-                },
-                {
-                    "The ground is checkered!": []
-                },
-                {
-                    "Yeti on the dance floor!": []
-                },
-                {
-                    "Move that camera!": []
-                }
-            ],
-        },
-        {
-            "Features": [{
-                    "Starter Scene Code": [{
-                        "CreateScene": []
-                    }]
-                },
-                {
-                    "Introduction": [{
-                            "Firsts": [{
-                                    "First Scene and Model": []
-                                },
-                                {
-                                    "First Model on a Web Page": []
-                                },
-                                {
-                                    "First Import of a Model": []
-                                },
-                                {
-                                    "First App on the Web": []
-                                }
-                            ]
+    const script = document.createElement("script");
+    script.src = sceneFile;
 
-                        },
-                        {
-                            "Build A Village": [{
-                                    "Grounding the World": []
-                                },
-                                {
-                                    "Adding Sound": []
-                                },
-                                {
-                                    "Place and Scale a Mesh": []
-                                },
-                                {
-                                    "A Basic House": []
-                                },
-                                {
-                                    "Add Texture": []
-                                },
-                                {
-                                    "Material For Each House Side": []
-                                },
-                                {
-                                    "Combining Meshes": []
-                                },
-                                {
-                                    "Copying Meshes": []
-                                },
-                                {
-                                    "Changing the Viewer's Camera": []
-                                },
-                                {
-                                    "Web App Layout": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Village Animation": [{
-                                    "Mesh Parents": []
-                                },
-                                {
-                                    "Building the Car": []
-                                },
-                                {
-                                    "Car Materials": []
-                                },
-                                {
-                                    "Wheel Animation": []
-                                },
-                                {
-                                    "Car Animation": []
-                                },
-                                {
-                                    "Character Animation": []
-                                },
-                                {
-                                    "A Walk Around The Village": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Avoiding Collisions": [{
-                                "Avoiding a Car Crash": []
-                            }]
-                        },
-                        {
-                            "A Better Environment": [{
-                                    "Distant Hills": []
-                                },
-                                {
-                                    "Skies Above": []
-                                },
-                                {
-                                    "Sprite Trees": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Build a Particle Fountain": [{
-                                    "A Lathe Turned Fountain": []
-                                },
-                                {
-                                    "Particle Spray": []
-                                },
-                                {
-                                    "The Switch On Event": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Light the Night": [{
-                                    "Street Lights": []
-                                },
-                                {
-                                    "Day to Night": []
-                                },
-                                {
-                                    "Adding Shadows": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Ways to See The World": [{
-                                    "Have a Look Around": []
-                                },
-                                {
-                                    "Follow That Character": []
-                                },
-                                {
-                                    "Going Virtual": []
-                                }
-                            ]
-
-                        },
-
-                    ]
-                },
-                {
-                    "Deep Dive": [{
-                            "Animation": [{
-                                    "Introduction to Animations": []
-                                },
-                                {
-                                    "Designing an Animation": []
-                                },
-                                {
-                                    "Description of the Animation Method": []
-                                },
-                                {
-                                    "Sequencing Animations": []
-                                },
-                                {
-                                    "Grouping Animations": []
-                                },
-                                {
-                                    "Combining Animations": []
-                                },
-                                {
-                                    "Animating Characters": []
-                                },
-                                {
-                                    "Advanced Animation Methods": []
-                                },
-                                {
-                                    "Animation Using the Render Loop": []
-                                },
-                                {
-                                    "Baked Texture Animations": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Audio": [{
-                                "Playing Sounds and Music": []
-                            }]
-                        },
-                        {
-                            "Behaviors": [{
-                                    "Camera Behaviors": []
-                                },
-                                {
-                                    "Mesh Behaviors": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Cameras": [{
-                                    "Camera Introduction": []
-                                },
-                                {
-                                    "Camera Collisions": []
-                                },
-                                {
-                                    "Customizing Camera Inputs": []
-                                },
-                                {
-                                    "Multiviews Part1": []
-                                },
-                                {
-                                    "Multiviews Part2": []
-                                },
-                                {
-                                    "Layer Masks and Multi-Cam Textures": []
-                                },
-                                {
-                                    "WebVR Camera": []
-                                },
-                                {
-                                    "WebVR Experience Helper": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "2D Controls": [{
-                                    "Timeline Control": []
-                                },
-                                {
-                                    "Resizer Control": []
-                                },
-                                {
-                                    "Image Filter Control": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Crowd Navigation System": [{
-                                    "Creating A Navigation Mesh": []
-                                },
-                                {
-                                    "Crowd Agents": []
-                                },
-                                {
-                                    "Obstacles": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Environment": [{
-                                    "Introduction To Environment": []
-                                },
-                                {
-                                    "Skyboxes": []
-                                },
-                                {
-                                    "Background Materials": []
-                                },
-                                {
-                                    "Lens Flares": []
-                                },
-                                {
-                                    "Reflection Probes": []
-                                },
-                                {
-                                    "360 Photo Domes": []
-                                },
-                                {
-                                    "360 Video Domes": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Events": [{
-                                    "Actions": []
-                                },
-                                {
-                                    "Observables": []
-                                },
-                                {
-                                    "Promises": []
-                                },
-                                {
-                                    "Coroutines": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Exporters": [{
-                                    "glTF Exporter": []
-                                },
-                                {
-                                    "3DSMax": []
-                                },
-                                {
-                                    "3DSMax to glTF": []
-                                },
-                                {
-                                    "Blender": []
-                                },
-                                {
-                                    "Blender Tips": []
-                                },
-                                {
-                                    "Blender to glTF": []
-                                },
-                                {
-                                    "Bones influences per vertex": []
-                                },
-                                {
-                                    "Cheetah3D": []
-                                },
-                                {
-                                    "Maya": []
-                                },
-                                {
-                                    "Maya to glTF": []
-                                },
-                                {
-                                    "Mixamo to Babylon": []
-                                },
-                                {
-                                    "Save Babylon": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "GUI": [{
-                                    "The Babylon GUI": []
-                                },
-                                {
-                                    "Scroll Viewer": []
-                                },
-                                {
-                                    "XML Loader": []
-                                },
-                                {
-                                    "Selector": []
-                                },
-                                {
-                                    "Babylon 3D GUI": []
-                                },
-                                {
-                                    "MRTK Content": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Input": [{
-                                    "Gamepads": []
-                                },
-                                {
-                                    "Virtual Joysticks": []
-                                },
-                                {
-                                    "Device Source Manager": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Importing Assets": [{
-                                    "Loading Any File Type": []
-                                },
-                                {
-                                    "Loading Assets From Memory": []
-                                },
-                                {
-                                    "Incremental Loading System": []
-                                },
-                                {
-                                    ".glTF File Loader Plugin": [{
-                                            "Skinning": []
-                                        },
-                                        {
-                                            "Progressively Load .glTF Files": []
-                                        },
-                                        {
-                                            "Create Your Own glTF Extensions": []
-                                        }
-                                    ]
-                                },
-                                {
-                                    ".stl File Loader Plugin": []
-                                },
-                                {
-                                    ".obj File Loader Plugin": []
-                                },
-                                {
-                                    "Asset Manager": []
-                                },
-                                {
-                                    "Asset Containers": []
-                                },
-                                {
-                                    "Create Your Own File Importer": []
-                                },
-                                {
-                                    "SceneLoader class (legacy)": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Lights": [{
-                                    "Introduction to Lights": []
-                                },
-                                {
-                                    "Shadows": []
-                                },
-                                {
-                                    "Cascaded Shadow Maps": []
-                                },
-                                {
-                                    "Volumetric Light Scattering Post Process": []
-                                },
-                                {
-                                    "Global Illumination with Reflective Shadow Maps": []
-                                },
-                                {
-                                    "Depth metric when rendering shadows": []
-                                }
-                            ]
-
-                        },
-                        {
-                            "Materials": [{
-                                    "Using Materials": [
-                                        [{
-                                                "Introduction to Material": []
-                                            },
-                                            {
-                                                "Apply Bump, Opacity, Tiling, and Detail maps": []
-                                            },
-                                            {
-                                                "Parallax Mapping": []
-                                            },
-                                            {
-                                                "Understanding Normal Maps": []
-                                            },
-                                            {
-                                                "Blend Modes": []
-                                            },
-                                            {
-                                                "Applying Materials to Individual Faces": []
-                                            },
-                                            {
-                                                "Applying Different Materials to the Front and Back": []
-                                            },
-                                            {
-                                                "Multi-Materials": []
-                                            },
-                                            {
-                                                "Dynamic Textures": []
-                                            },
-                                            {
-                                                "Video Textures": []
-                                            },
-                                            {
-                                                "Reflections and Refractions": []
-                                            },
-                                            {
-                                                "Fresnel Parameters": []
-                                            },
-                                            {
-                                                "KTX2 Compressed Textures": []
-                                            },
-                                            {
-                                                "Introduction to Physically Based Rendering (PBR)": []
-                                            },
-                                            {
-                                                "HDR Environment for PBR": []
-                                            },
-                                            {
-                                                "Mastering Physically Based Rendering (PBR)": []
-                                            },
-                                            {
-                                                "Procedural Textures": []
-                                            },
-                                            {
-                                                "Material Plugins": []
-                                            }
-                                        ]
-
-                                    ]
-                                },
-                                {
-                                    "Shaders": [{
-                                            "Introduction to Shaders": []
-                                        },
-                                        {
-                                            "Putting Shader Code into Babylon.js": []
-                                        },
-                                        {
-                                            "Using ShaderMaterial": []
-                                        },
-                                        {
-                                            "Using Fog with Shader Materials": []
-                                        },
-                                        {
-                                            "Image Processing": []
-                                        },
-                                        {
-                                            "Compute Shaders": []
-                                        }
-                                    ]
-                                },
-                                {
-                                    "Node Materials": [{
-                                            "Node Materials": []
-                                        },
-                                        {
-                                            "Node Material and PBR": []
-                                        },
-                                        {
-                                            "Node Material Post Processes": []
-                                        },
-                                        {
-                                            "Node Material Procedural Textures": []
-                                        },
-                                        {
-                                            "Node Material Particle Shaders": []
-                                        },
-                                        {
-                                            "Available Nodes (blocks)": []
-                                        },
-                                        {
-                                            "Using Node Material with Particles": []
-                                        }
-                                    ]
-
-                                },
-                                {
-                                    "Advanced Materials": [{
-                                            "How Materials Work": []
-                                        },
-                                        {
-                                            "Materials and Vertices": []
-                                        },
-                                        {
-                                            "Create Custom Procedural Textures": []
-                                        },
-                                        {
-                                            "Create a Texture Package": []
-                                        },
-                                        {
-                                            "Multi-Platform Compressed Textures": []
-                                        },
-                                        {
-                                            "Render pass ids": []
-                                        },
-                                        {
-                                            "Transparent Rendering": []
-                                        },
-                                        {
-                                            "Raw Textures": []
-                                        },
-                                        {
-                                            "Get Depth Values with the Depth Renderer": []
-                                        },
-                                        {
-                                            "The Logarithmic Depth Buffer": []
-                                        }
-
-                                    ]
-
-                                }
-                            ]
-
-                        },
-                        {
-                            "Mesh": [{
-                                    "Creating Meshes": [{
-                                            "Create Set Shapes": [{
-                                                    "Box": []
-                                                },
-                                                {
-                                                    "Tiled Box": []
-                                                },
-                                                {
-                                                    "Sphere": []
-                                                },
-                                                {
-                                                    "Cylinder": []
-                                                },
-                                                {
-                                                    "Capsule": []
-                                                },
-                                                {
-                                                    "Plane": []
-                                                },
-                                                {
-                                                    "Tiled Plane": []
-                                                },
-                                                {
-                                                    "Disc": []
-                                                },
-                                                {
-                                                    "Torus": []
-                                                },
-                                                {
-                                                    "Torus Knot": []
-                                                },
-                                                {
-                                                    "Ground": []
-                                                },
-                                                {
-                                                    "Ground from Height Map": []
-                                                },
-                                                {
-                                                    "More on Height Maps": []
-                                                },
-                                                {
-                                                    "Tiled Ground": []
-                                                },
-                                                {
-                                                    "Text": []
-                                                }
-
-                                            ]
-                                        },
-                                        {
-                                            "Create Parametric Meshes": [{
-                                                    "Lines": []
-                                                },
-                                                {
-                                                    "Dashed Lines": []
-                                                },
-                                                {
-                                                    "Line System": []
-                                                },
-                                                {
-                                                    "GreasedLine": [{
-                                                            "Advanced examples": []
-                                                        },
-                                                        {
-                                                            "GreasedLineRibbon - non camera facing GreasedLine": []
-                                                        }
-
-                                                    ]
-                                                },
-                                                {
-                                                    "Ribbon": []
-                                                },
-                                                {
-                                                    "Ribbon in Detail": []
-                                                },
-                                                {
-                                                    "Ribbons with Maths": []
-                                                },
-                                                {
-                                                    "Tube": []
-                                                },
-                                                {
-                                                    "Extrusion": []
-                                                },
-                                                {
-                                                    "Custom Extrusion": []
-                                                },
-                                                {
-                                                    "Lathe": []
-                                                },
-                                                {
-                                                    "Irregular Polygon": []
-                                                },
-                                                {
-                                                    "Polygon Extrusion": []
-                                                },
-                                                {
-                                                    "Polygon Mesh Builder": []
-                                                }
-
-                                            ]
-                                        },
-                                        {
-                                            "Creating Polyhedra Shapes": [{
-                                                    "Provided Polyhedra": []
-                                                },
-                                                {
-                                                    "Custom Polyhedra": []
-                                                },
-                                                {
-                                                    "Icosphere": []
-                                                },
-                                                {
-                                                    "Geodesic Polyhedra": []
-                                                },
-                                                {
-                                                    "Goldberg Polyhedra": []
-                                                }
-
-                                            ]
-                                        },
-                                        {
-                                            "Create Custom Meshes": [{
-                                                    "Create a Custom Mesh From Scratch": []
-                                                },
-                                                {
-                                                    "Updating Vertices": []
-                                                },
-                                                {
-                                                    "Vertex Normals": []
-                                                }
-
-                                            ]
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "Mesh Transformations": [{
-                                            "Centered on Created Origin": [{
-                                                    "Position a Mesh": []
-                                                },
-                                                {
-                                                    "Mesh Rotation": []
-                                                },
-                                                {
-                                                    "Sequencing Rotations": []
-                                                },
-                                                {
-                                                    "Rotation Quaternions": []
-                                                },
-                                                {
-                                                    "Target Axes Alignment": []
-                                                },
-                                                {
-                                                    "Rotation Conventions": []
-                                                },
-                                                {
-                                                    "Introduction to Coordinate Transformation": []
-                                                },
-                                                {
-                                                    "Coordinate Transformation Examples": []
-                                                },
-                                                {
-                                                    "Baking Transformations": []
-                                                }
-
-                                            ]
-                                        },
-                                        {
-                                            "Parents and Pivots": [{
-                                                    "Transform Node": []
-                                                },
-                                                {
-                                                    "Parents and Children": []
-                                                },
-                                                {
-                                                    "Pivots": []
-                                                },
-                                                {
-                                                    "Rotate Around Axis": []
-                                                }
-
-                                            ]
-                                        },
-                                        {
-                                            "Lattice": []
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "Copies, Clones and Instances": [{
-                                            "Clones": []
-                                        },
-                                        {
-                                            "Using the SPS to Clone": []
-                                        },
-                                        {
-                                            "Instances": []
-                                        },
-                                        {
-                                            "Thin Instances": []
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "Interactions": [{
-                                            "Mesh Intersections": []
-                                        },
-                                        {
-                                            "Mesh Picking": []
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "Node Geometry": []
-                                },
-                                {
-                                    "Drawing Bounding Boxes": []
-                                },
-                                {
-                                    "BillBoard Mode": []
-                                },
-                                {
-                                    "Decals": []
-                                },
-                                {
-                                    "Highlight Meshes": []
-                                },
-                                {
-                                    "Making Meshes Glow": []
-                                },
-                                {
-                                    "Merging Meshes": []
-                                },
-                                {
-                                    "Drawing Curves": []
-                                },
-                                {
-                                    "Path 3D": []
-                                },
-                                {
-                                    "Facet Data": []
-                                },
-                                {
-                                    "Levels of Detail (LOD)": []
-                                },
-                                {
-                                    "Dynamically Morph a Mesh": []
-                                },
-                                {
-                                    "Morph Targets": []
-                                },
-                                {
-                                    "Bones and Skeletons": [{
-                                        "Bone Class Internals": []
-                                    }]
-                                },
-                                {
-                                    "Rendering Utility Layers": []
-                                },
-                                {
-                                    "Gizmos": []
-                                },
-                                {
-                                    "Simplifying Meshes with Auto-LOD": []
-                                },
-                                {
-                                    "Rendering Edges": []
-                                },
-                                {
-                                    "Trail Mesh": []
-                                },
-                                {
-                                    "Gaussian Splatting": []
-                                },
-                                {
-                                    "Hotspot": []
-                                },
-                                {
-                                    "Exploding Meshes": []
-                                },
-                                {
-                                    "Visualizing Mesh Data": []
-                                }
-
-
-                            ]
-
-                        },
-                        {
-                            "Occlusion Queries": []
-                        },
-                        {
-                            "Particles": [{
-                                    "Particle System": [{
-                                            "Introduction to the Particle System": []
-                                        },
-                                        {
-                                            "Basic Particle Properties": []
-                                        },
-                                        {
-                                            "Change Particle Properties Over Time": []
-                                        },
-                                        {
-                                            "Shape Emitters": []
-                                        },
-                                        {
-                                            "Animating Particles": []
-                                        },
-                                        {
-                                            "Customizing Particles": []
-                                        },
-                                        {
-                                            "The Particle Helper": []
-                                        },
-                                        {
-                                            "Color Ramps and Blends, and Billboard Mode": []
-                                        },
-                                        {
-                                            "Sub Emitters": []
-                                        },
-                                        {
-                                            "GPU Particles": []
-                                        },
-                                        {
-                                            "Particle Snippet Server": []
-                                        },
-                                        {
-                                            "Load Particles from File": []
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "Solid Particle System": [{
-                                            "Introduction To SPS": []
-                                        },
-                                        {
-                                            "SPS Animations": []
-                                        },
-                                        {
-                                            "Managing the SPS": []
-                                        },
-                                        {
-                                            "Managing SPS Particles": []
-                                        },
-                                        {
-                                            "SPS Material": []
-                                        },
-                                        {
-                                            "Immutable SPS": []
-                                        },
-                                        {
-                                            "SPS from Mesh Facets": []
-                                        },
-                                        {
-                                            "Update a Particle's Shape": []
-                                        },
-                                        {
-                                            "SPS Particle Picking": []
-                                        },
-                                        {
-                                            "SPS Physics": []
-                                        },
-                                        {
-                                            "Optimize an SPS": []
-                                        },
-                                        {
-                                            "Expandable SPS": []
-                                        },
-                                        {
-                                            "SPS Visibility Issues": []
-                                        },
-                                        {
-                                            "SPS Transparency Issues": []
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "Points Cloud System": [{
-                                            "An Introduction to PCS": []
-                                        },
-                                        {
-                                            "Creating a PCS": []
-                                        },
-                                        {
-                                            "Managing a PCS": []
-                                        },
-                                        {
-                                            "Manage PCS Particles": []
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "Fluid Renderer": [{
-                                            "Using the Fluid Renderer": []
-                                        },
-                                        {
-                                            "Fluid Rendering Demos": []
-                                        },
-                                        {
-                                            "Fluid Rendering GUI": []
-                                        },
-                                        {
-                                            "Technical Implementation Details": []
-                                        }
-
-                                    ]
-                                }
-
-                            ]
-                        },
-                        {
-                            "Physics": [{
-                                    "Using A Physics Engine": []
-                                },
-                                {
-                                    "Rigid bodies": []
-                                },
-                                {
-                                    "Shapes": []
-                                },
-                                {
-                                    "Forces": []
-                                },
-                                {
-                                    "Compounds": []
-                                },
-                                {
-                                    "Aggregates": []
-                                },
-                                {
-                                    "Collision Events": []
-                                },
-                                {
-                                    "Constraints": []
-                                },
-                                {
-                                    "Raycast": []
-                                },
-                                {
-                                    "Migrate from V1": []
-                                },
-                                {
-                                    "Performance Tips": []
-                                },
-                                {
-                                    "Ragdolls": []
-                                },
-                                {
-                                    "Shape cast": []
-                                },
-                                {
-                                    "Prestep": []
-                                },
-                                {
-                                    "Character Controller": []
-                                },
-                                {
-                                    "The Havok Physics Plugin": []
-                                }
-
-                            ]
-                        },
-                        {
-                            "Post Processes": [{
-                                    "Using Post Processes": []
-                                },
-                                {
-                                    "Using the PostProcessRenderPipeline": []
-                                },
-                                {
-                                    "Using the SSAO Rendering Pipeline": []
-                                },
-                                {
-                                    "Using the Standard Rendering Pipeline (deprecated)": []
-                                },
-                                {
-                                    "Using the Default Rendering Pipeline": []
-                                },
-                                {
-                                    "Depth of Field and Other Lens Effects": []
-                                },
-                                {
-                                    "Using the IBL Shadows Rendering Pipeline": []
-                                },
-                                {
-                                    "Motion Blur Post Process": []
-                                },
-                                {
-                                    "Using the Screen Space Reflections (SSR) Rendering Pipeline": []
-                                },
-                                {
-                                    "Screen Space Reflections (SSR) Post Process": []
-                                },
-                                {
-                                    "Temporal Anti-Aliasing (TAA) rendering pipeline": []
-                                },
-                                {
-                                    "Using RenderTargetTexture and Multiple Passes": []
-                                }
-
-                            ]
-                        },
-                        {
-                            "Scene": [{
-                                    "Fast Build A World": []
-                                },
-                                {
-                                    "Interacting With Scenes": []
-                                },
-                                {
-                                    "Using Multiple Scenes": []
-                                },
-                                {
-                                    "Using Multiple Canvases": []
-                                },
-                                {
-                                    "Applying Delta Changes To A Scene": []
-                                },
-                                {
-                                    "Creating Custom Loading Screens": []
-                                },
-                                {
-                                    "Optimize Your Scene": []
-                                },
-                                {
-                                    "The Scene Optimizer": []
-                                },
-                                {
-                                    "Optimizing with Octrees": []
-                                },
-                                {
-                                    "Optimizing Using Cached Resources": []
-                                },
-                                {
-                                    "Floating Origin": []
-                                },
-                                {
-                                    "Reducing Memory Footprint": []
-                                },
-                                {
-                                    "Using Offscreen Canvas": []
-                                },
-                                {
-                                    "Render Scenes To .png Files": []
-                                },
-                                {
-                                    "Render Scenes To Video": []
-                                },
-                                {
-                                    "Using Clip Planes": []
-                                },
-                                {
-                                    "Render Scenes And Take Screenshots On A Remote Server": []
-                                },
-                                {
-                                    "In-Depth Layer Mask": []
-                                }
-
-                            ]
-                        },
-                        {
-                            "Sprites": [{
-                                    "An Introduction to Sprites": []
-                                },
-                                {
-                                    "Sprite Manager": []
-                                },
-                                {
-                                    "Sprite Packed Manager": []
-                                },
-                                {
-                                    "Picking a Sprite": []
-                                },
-                                {
-                                    "Sprite Map": []
-                                },
-                                {
-                                    "Sprite Map Tile Layout": []
-                                },
-                                {
-                                    "Sprite Map Options": []
-                                },
-                                {
-                                    "Sprite Map Animations": []
-                                },
-                                {
-                                    "Sprite Map Example": []
-                                },
-                                {
-                                    "Sprite Snippet Server": []
-                                }
-
-                            ]
-                        },
-                        {
-                            "Tags": []
-                        },
-                        {
-                            "Viewer": [{
-                                    "Viewer Camera Controls": []
-                                },
-                                {
-                                    "Viewer Default UI": []
-                                },
-                                {
-                                    "Viewer HTML Element Interface": []
-                                },
-                                {
-                                    "Viewer HTML Element Styling": []
-                                },
-                                {
-                                    "Viewer HotSpots & Annotations": []
-                                },
-                                {
-                                    "Viewer Advanced Usage": []
-                                },
-                                {
-                                    "Viewer & React": []
-                                },
-                                {
-                                    "Viewer Migration (V1 -> V2)": []
-                                }
-
-                            ]
-                        },
-                        {
-                            "WebXR": [{
-                                    "Introduction To WebXR": []
-                                },
-                                {
-                                    "WebXR Features": [{
-                                            "WebXR Teleportation": []
-                                        },
-                                        {
-                                            "WebXR Hand Tracking": []
-                                        },
-                                        {
-                                            "WebXR Movement": []
-                                        },
-                                        {
-                                            "WebXR Layers": []
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    "The WebXR Experience Helpers": []
-                                },
-                                {
-                                    "The WebXR Session Managers": []
-                                },
-                                {
-                                    "The WebXR Camera": []
-                                },
-                                {
-                                    "The WebXR Features Manager": []
-                                },
-                                {
-                                    "WebXR Demos and Examples": []
-                                },
-                                {
-                                    "WebXR Input and Controller Support": []
-                                },
-                                {
-                                    "WebXR Augmented Reality Features": []
-                                }
-
-                            ]
-                        }
-                    ]
-
-                }
-            ]
+    script.onload = () => {
+        if (typeof createScene === "function") {
+            initFunction(createScene);
+        } else {
+            console.error("createScene is not defined in the loaded script.");
         }
+    };
 
-    ]
+    script.onerror = () => {
+        console.error(`Failed to load script: ${sceneFile}`);
+        alert(`Failed to load scene: ${sceneFile}`);
+    };
+
+    document.body.appendChild(script);
+}
+
+// Button and Modal Elements
 
 
-};
+// Initially hide the button
+
+// function loadSceneCode(sceneCode) {
+//     const toggleCodeButton = document.getElementById("toggleCodeButton");
+// const codeModal = document.getElementById("codeModal");
+// const codeDisplay = document.getElementById("codeDisplay");
+// const closeCodeModal = document.getElementById("closeCodeModal");
+// toggleCodeButton.style.display = "none";
+
+
+//     try {
+//         // Dynamically evaluate the scene code
+//         eval(sceneCode);
+
+//         // Check if the createScene function exists and is callable
+//         if (typeof createScene === "function") {
+//             initFunction(createScene);
+//              // Show the "View Code" button
+//              toggleCodeButton.style.display = "block";
+
+//              // Update codeDisplay with the provided sceneCode
+//             codeDisplay.textContent = sceneCode;
+//         } else {
+//             console.error("createScene is not defined in the provided code.");
+//         }
+//     } catch (error) {
+//         console.error("Failed to execute scene code:", error);
+//         alert("Failed to load scene.");
+//     }
+//     // Button Click Event to Toggle Code Modal
+// toggleCodeButton.addEventListener("click", () => {
+//     toggleCodeButton.classList.toggle("active");
+//     codeModal.classList.toggle("active");
+
+//     if (codeModal.classList.contains("active")) {
+//         toggleCodeButton.textContent = "Hide Code";
+//     } else {
+//         toggleCodeButton.textContent = "View Code";
+//     }
+// });
+
+// // Close Modal Logic
+// closeCodeModal.addEventListener("click", () => {
+//     toggleCodeButton.classList.remove("active");
+//     codeModal.classList.remove("active");
+//     toggleCodeButton.textContent = "View Code";
+// });
+
+// }
+
+// function loadSceneCode(sceneCode) {
+//     const toggleCodeButton = document.getElementById("toggleCodeButton");
+//     const codeModal = document.getElementById("codeModal");
+//     //const codeEditor = document.getElementById("codeEditor");
+//     const runCodeButton = document.getElementById("runCodeButton");
+//     const closeCodeModal = document.getElementById("closeCodeModal");
+//     // Initially hide the button
+//     toggleCodeButton.style.display = "none";
+
+// // Initialize CodeMirror
+// const codeEditor = new CodeMirror(document.getElementById("codeEditor"), {
+//     value: '',
+//     mode: "javascript", // Set the language mode to JavaScript
+//     theme: "default", // You can customize this with CodeMirror themes
+//     lineNumbers: true, // Show line numbers
+//     tabSize: 2, // Set tab size
+//     indentUnit: 2, // Set indentation unit
+// });
+
+//     try {
+//         // Dynamically evaluate the scene code
+//         eval(sceneCode);
+
+//         // Check if the createScene function exists and is callable
+//         if (typeof createScene === "function") {
+//             initFunction(createScene);
+
+//             // Update and show the "View Code" button
+//             toggleCodeButton.style.display = "block";
+//             //codeEditor.value = sceneCode;
+//             codeEditor.setValue(sceneCode);
+
+
+
+//             // Remove any previous click events to avoid duplication
+//             toggleCodeButton.replaceWith(toggleCodeButton.cloneNode(true));
+//             const newToggleCodeButton = document.getElementById("toggleCodeButton");
+
+//             // Add new click event for the button
+//             newToggleCodeButton.addEventListener("click", () => {
+//                 newToggleCodeButton.classList.toggle("active");
+//                 codeModal.classList.toggle("active");
+
+//                 if (codeModal.classList.contains("active")) {
+//                     newToggleCodeButton.textContent = "Hide Code";
+//                 } else {
+//                     newToggleCodeButton.textContent = "View Code";
+//                 }
+//             });
+
+//             // Ensure the close button works
+//             closeCodeModal.addEventListener("click", () => {
+//                 newToggleCodeButton.classList.remove("active");
+//                 codeModal.classList.remove("active");
+//                 newToggleCodeButton.textContent = "View Code";
+//             });
+
+//             //
+//             toggleCodeButton.addEventListener("click", () => {
+//                 codeModal.classList.add("active");
+//             });
+        
+//             // Close modal on "Close" button click
+//             closeCodeModal.addEventListener("click", () => {
+//                 codeModal.classList.remove("active");
+//             });
+        
+//             // Run the code from the editor
+//             runCodeButton.addEventListener("click", () => {
+//                 const userCode = codeEditor.getValue();
+        
+//                 try {
+//                     // Dynamically evaluate the user's code
+//                     eval(userCode);
+
+        
+//                     // Check if `createScene` is defined
+//                     if (typeof createScene === "function") {
+//                         console.log("Executing the updated scene...");
+//                         initFunction(createScene);
+//                     } else {
+//                         console.error("createScene is not defined. Please check your code.");
+//                     }
+//                 } catch (error) {
+//                     console.error("Error executing user code:", error);
+//                     alert(`Error: ${error.message}`);
+//                 }
+//             });
+
+//         } else {
+//             console.error("createScene is not defined in the provided code.");
+//         }
+//     } catch (error) {
+//         console.error("Failed to execute scene code:", error);
+//         alert("Failed to load scene.");
+//     }
+// }
+
+let codeEditor = null; // Declare CodeMirror globally to initialize it only once
+
+function loadSceneCode(sceneCode) {
+    const toggleCodeButton = document.getElementById("toggleCodeButton");
+    const codeModal = document.getElementById("codeModal");
+    const runCodeButton = document.getElementById("runCodeButton");
+    const closeCodeModal = document.getElementById("closeCodeModal");
+
+    // Hide the toggle button initially
+    toggleCodeButton.style.display = "none";
+
+    // Initialize CodeMirror if not already initialized
+    if (!codeEditor) {
+        codeEditor = CodeMirror(document.getElementById("codeEditor"), {
+            value: "", // Empty initially
+            mode: "javascript",
+            theme: "default",
+            lineNumbers: true,
+            tabSize: 2,
+            indentUnit: 2,
+        });
+    }
+
+    try {
+        // Dynamically evaluate the provided scene code
+        eval(sceneCode);
+
+        // Check if `createScene` exists and is callable
+        if (typeof createScene === "function") {
+            initFunction(createScene);
+
+            // Update and show the "View Code" button
+            toggleCodeButton.style.display = "block";
+
+            // Set the CodeMirror editor's value to the provided code
+            codeEditor.setValue(sceneCode);
+
+            // Toggle Code Modal visibility
+            toggleCodeButton.onclick = () => {
+                codeModal.classList.toggle("active");
+                toggleCodeButton.textContent = codeModal.classList.contains("active") ? "Hide Code" : "View Code";
+            };
+
+            // Close the modal
+            closeCodeModal.onclick = () => {
+                codeModal.classList.remove("active");
+                toggleCodeButton.textContent = "View Code";
+            };
+
+            // Run the code from the editor
+            runCodeButton.onclick = () => {
+                const userCode = codeEditor.getValue(); // Get the code from CodeMirror
+
+                try {
+                    // Dynamically evaluate the user's code
+                    eval(userCode);
+
+                    // Validate the existence of `createScene`
+                    if (typeof createScene === "function") {
+                        console.log("Executing the updated scene...");
+                        initFunction(createScene);
+                    } else {
+                        throw new Error("createScene is not defined. Please check your code.");
+                    }
+                } catch (error) {
+                    console.error("Error executing user code:", error);
+                    alert(`Error: ${error.message}`);
+                }
+            };
+        } else {
+            throw new Error("createScene is not defined in the provided code.");
+        }
+    } catch (error) {
+        console.error("Failed to execute scene code:", error);
+        alert("Failed to load scene. Please check the code and try again.");
+    }
+}
 
 // Recursive function to generate hierarchy without duplication
 function generateHierarchy(obj, parentElement) {
@@ -1300,7 +270,7 @@ function generateHierarchy(obj, parentElement) {
 
             value.forEach((child) => {
                 Object.entries(child).forEach(([subKey, subValue]) => {
-                    const childContainer = document.createElement('div');
+                    const childContainer = document.createElement('p');
                     
 
                     // Recursive call if there are deeper levels
@@ -1309,8 +279,21 @@ function generateHierarchy(obj, parentElement) {
                         generateHierarchy({ [subKey]: subValue }, childContainer);
                     }else{
                         childContainer.classList.add('hierarchy-item');
+                        
+                       //childContainer.href="js/1.js";
                         childContainer.textContent = subKey;
 
+
+
+                        //childContainer.addEventListener("click", () => loadScene("js/1.js"));
+                        childContainer.addEventListener("click", () => {
+                           var data =  CodeList.indexToCode[PageMapper.keyToIndex[subKey]];
+                           console.log(`${data}`); 
+                           loadSceneCode(data);
+
+                        });
+
+                        
                     }
 
 
