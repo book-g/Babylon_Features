@@ -156,7 +156,7 @@ var createScene = function () {
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
     // Load the 3D model
-    BABYLON.SceneLoader.ImportMeshAsync("", "3dmodel/", "dance_alien.glb", scene)
+    BABYLON.SceneLoader.ImportMeshAsync("", "3dmodel/", "house_dancing.glb", scene)
         .then((result) => {
             var dude = result.meshes[0]; // The root mesh
             dude.scaling = new BABYLON.Vector3(10.0, 10.0, 10.0);
