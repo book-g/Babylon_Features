@@ -205,40 +205,59 @@ var root_content = {
                             "Build a Particle Fountain": [{
                                     "A Lathe Turned Fountain": [
                                         {"Use the createLathe method to create a fountain.":[]},
-                                        {"":[]},
+                                        {"Add the fountain into the village.":[]},
                                     ]
                                 },
                                 {
-                                    "Particle Spray": []
+                                    "Particle Spray": [
+                                        {"Create a basic particle system as water spray.":[]}
+                                    ]
                                 },
                                 {
-                                    "The Switch On Event": []
+                                    "The Switch On Event": [
+                                        {"Start and stop a particle system on click.":[]},
+                                        {"Add the fountain to the village.":[]}
+                                    ]
                                 }
                             ]
 
                         },
                         {
                             "Light the Night": [{
-                                    "Street Lights": []
+                                    "Street Lights": [
+                                        {"Create a basic streetlight shape and attach a spotlight.":[]},
+                                        {"Add street lights to the village and adjust the lighting.":[]}
+                                    ]
                                 },
                                 {
-                                    "Day to Night": []
+                                    "Day to Night": [
+                                        {"Add a gui slider that controls the lighting in the village.":[]}
+                                    ]
                                 },
                                 {
-                                    "Adding Shadows": []
+                                    "Adding Shadows": [
+                                        {"Set up a scene for shadows with the shadow generator.":[]},
+                                        {"Adding basic shadows to the village.":[]}
+                                    ]
                                 }
                             ]
 
                         },
                         {
                             "Ways to See The World": [{
-                                    "Have a Look Around": []
+                                    "Have a Look Around": [
+                                        {"Parent the camera to a character for an over the shoulder angle.":[]}
+                                    ]
                                 },
                                 {
-                                    "Follow That Character": []
+                                    "Follow That Character": [
+                                        {"Use the follow cam to follow the character around the village.":[]}
+                                    ]
                                 },
                                 {
-                                    "Going Virtual": []
+                                    "Going Virtual": [
+                                        {"See Our Virtual Village World in XR":[],"code_type":"html"}
+                                    ]
                                 }
                             ]
 
