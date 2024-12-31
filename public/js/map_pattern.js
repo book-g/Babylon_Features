@@ -245,13 +245,19 @@ var root_content = {
                         },
                         {
                             "Ways to See The World": [{
-                                    "Have a Look Around": []
+                                    "Have a Look Around": [
+                                        {"Parent the camera to a character for an over the shoulder angle.":[]}
+                                    ]
                                 },
                                 {
-                                    "Follow That Character": []
+                                    "Follow That Character": [
+                                        {"Use the follow cam to follow the character around the village.":[]}
+                                    ]
                                 },
                                 {
-                                    "Going Virtual": []
+                                    "Going Virtual": [
+                                        {"See Our Virtual Village World in XR":[],"code_type":"html"}
+                                    ]
                                 }
                             ]
 
