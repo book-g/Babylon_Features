@@ -157,19 +157,19 @@ var createScene = function () {
     // Add a light
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-    var music = new BABYLON.Sound("cello", "sound/16.wav", scene, null, { loop: true, autoplay: true,volume:1 });
+    //var music = new BABYLON.Sound("cello", "sound/16.wav", scene, null, { loop: true, autoplay: true,volume:1 //});
 
    
     
     // Load the 3D model
-    BABYLON.SceneLoader.ImportMeshAsync("", "3dmodel/", "inplace_walking.glb", scene)
+    BABYLON.SceneLoader.ImportMeshAsync("", "3dmodel/", "hipdance.glb", scene)
         .then((result) => {
             var dude = result.meshes[0]; // The root mesh
             dude.scaling = new BABYLON.Vector3(10.0, 10.0, 10.0);
 
             // Center the object
-            const boundingInfo = dude.getBoundingInfo();
-            const center = boundingInfo.boundingBox.centerWorld;
+            var boundingInfo = dude.getBoundingInfo();
+            var center = boundingInfo.boundingBox.centerWorld;
 
             // Translate the object to center it
             dude.position = dude.position.subtract(center);
