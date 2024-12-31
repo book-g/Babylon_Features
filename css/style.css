@@ -1,5 +1,5 @@
 #hierarchicalStructure {
-    max-height: 80vh;
+    max-height: 90vh;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
@@ -28,6 +28,10 @@
     display: none;
 }
 
+.hierarchy-item{
+
+}
+
 body {
     font-family: "Lato", sans-serif;
     margin: 0;
@@ -41,30 +45,33 @@ body {
     position: fixed; /* Stay in place */
     z-index: 1; /* On top */
     top: 0;
-    left: 0;
-    background-color: #111; /* Black */
+    left: 35px;
+    background-color: #8da2d1; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* Smooth transition */
-    padding-top: 60px; /* Padding from top */
+    padding-top: 5px; /* Padding from top */
   }
   
-  .sidebar a {
-    padding: 10px 15px;
+  .sidebar p {
     text-decoration: none;
-    font-size: 18px;
     color: #818181;
     display: block;
     transition: 0.3s;
   }
   
-  .sidebar a:hover {
-    color: #f1f1f1;
+  .sidebar p:hover {
+    color: red;
+  }
+
+  .sidebar p:active{
+    color: darkgreen;
   }
   
   /* Main content styling */
   #main {
     transition: margin-left 0.5s;
-    padding: 16px;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
   }
   
@@ -96,5 +103,131 @@ body {
   /* Media query for smaller screens */
   @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 14px;}
+    .sidebar p {font-size: 14px;}
   }
+
+ /* Canvas Styling */
+#renderCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* background: linear-gradient(180deg, #1e1e1e, #2b2b2b);*/
+  position: absolute; 
+}
+
+/* View Code Button */
+#toggleCodeButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  display: none;
+}
+
+#toggleCodeButton:hover {
+  transform: scale(1.1);
+  background-color: #005cbf;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styling */
+#codeModal {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-color: #282c34;
+  color: #ffffff;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+#codeModal.active {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* Code Display Area */
+#codeDisplay {
+  width: 90%;
+  height: 80%;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #a9b7c6;
+  overflow: auto;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+#closeCodeModal {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#closeCodeModal:hover {
+  background-color: #e03545;
+  transform: scale(1.05);
+}
+
+/* Code Editor */
+#codeEditor {
+  width: 90%;
+  height: 70%;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 15px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #a9b7c6;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+  resize: none;
+  overflow: auto;
+}
+
+/* Run Code Button */
+#runCodeButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#runCodeButton:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}

@@ -1,4 +1,13 @@
 class CodeList{
+
+ static indexToCode = {
+   1:Code_1_25.c1,
+   2:Code_1_25.c2,
+   3:Code_1_25.c3,
+   4:Code_1_25.c4,
+   5:Code_1_25.c5,
+ } ; 
+
  static list = [
     Code_1_25.c1,
     Code_1_25.c2,
