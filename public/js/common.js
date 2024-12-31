@@ -74,7 +74,6 @@ function initFunction(createSceneFunction) {
     }
 }
 
-
 window.addEventListener("resize", () => {
     if (engine) {
         engine.resize();

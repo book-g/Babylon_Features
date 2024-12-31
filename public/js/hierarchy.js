@@ -250,6 +250,7 @@ function loadSceneCode(sceneCode) {
     }
 }
 
+
 // Recursive function to generate hierarchy without duplication
 function generateHierarchy(obj, parentElement) {
     Object.entries(obj).forEach(([key, value]) => {
