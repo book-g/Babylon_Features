@@ -20,107 +20,193 @@ var root_content = {
         },
         {
             "Features": [{
-                    "Starter Scene Code": [{
-                        "CreateScene": []
-                    }]
+                    "Starter Scene Code": [
+                        {
+                        "CreateScene": [
+                            {"CreateScene Playground":[]}
+                        ]
+                    }
+                ]
                 },
                 {
                     "Introduction": [{
                             "Firsts": [{
-                                    "First Scene and Model": []
+                                    "First Scene and Model": [
+                                        {"Getting Started First Scene Playground.":[]}
+                                    ]
                                 },
                                 {
                                     "First Model on a Web Page": []
                                 },
                                 {
-                                    "First Import of a Model": []
+                                    "First Import of a Model": [
+                                        {"Load a model into a scene.":[]},
+                                        {"Load multiple models into a scene.":[]},
+                                        {" Load a model into a scene and modify their position after loading completes.":[]},
+                                    ]
                                 },
                                 {
-                                    "First App on the Web": []
+                                    "First App on the Web": [
+                                        {"Import a Model Setup":[],"code_type":"html"},
+                                        {"Code a Model Setup":[],"code_type":"html"},
+                                    ]
                                 }
                             ]
 
                         },
                         {
                             "Build A Village": [{
-                                    "Grounding the World": []
+                                    "Grounding the World": [
+                                        {"A playground showing how to add a basic ground plane to your scene.":[]},
+                                        {"A playground showing how to adjust the position of the box.":[]}
+                                    ]
                                 },
                                 {
-                                    "Adding Sound": []
+                                    "Adding Sound": [
+                                        {"A playground showing how easy it is to add sound to your scene.":[]},
+                                        {"Set an interval to play a sound every 3 seconds.":[]}
+                                    ]
                                 },
                                 {
-                                    "Place and Scale a Mesh": []
+                                    "Place and Scale a Mesh": [
+                                        {"A playground demonstrating different ways to position a mesh in your scene.":[]},
+                                        {"A playground demonstrating how to rotate a mesh in your scene.":[]}
+                                    ]
                                 },
                                 {
-                                    "A Basic House": []
+                                    "A Basic House": [
+                                        {"A playground demonstrating how to add a 'prism' roof to your house.":[]}
+                                    ]
                                 },
                                 {
-                                    "Add Texture": []
+                                    "Add Texture": [
+                                        {"A playground demonstrating how to add materials to the objects in your scene.":[]}
+                                    ]
                                 },
                                 {
-                                    "Material For Each House Side": []
+                                    "Material For Each House Side": [
+                                        {"A playground demonstrating how to add materials to individual faces of the objects in your scene.":[]},
+                                        {"A playground demonstrating how to add reuse materials to apply on individual faces of the objects in your scene.":[]},
+                                        {"A playground wrapping mesh-building code into functions for future repeat use.":[]},
+                                        
+                                    ]
                                 },
                                 {
-                                    "Combining Meshes": []
+                                    "Combining Meshes": [
+                                        {"A playground demonstrating how to combine meshes inside of your scene.":[]},
+                                        {"A playground demonstrating how to combine meshes while preserving material assignments.":[]},
+            
+                                    ]
                                 },
                                 {
-                                    "Copying Meshes": []
+                                    "Copying Meshes": [
+                                        {
+                                            "A playground expanding the house building function to accept a width of 1 or 2 for a detached or semi-detached house.":[],
+                                        },
+                                        {"A playground demonstrating how to create instances of a 3D object.":[]},
+                                        {"Wrapping the house instancing loop into a function.":[]},
+                                        {"An example of how to load a .glb of the starting village into your scene.":[]},
+                                        
+                                    ]
                                 },
                                 {
-                                    "Changing the Viewer's Camera": []
+                                    "Changing the Viewer's Camera": [
+                                        {"Example Viewer - Village":[],"code_type":"html"},
+                                    ]
                                 },
                                 {
-                                    "Web App Layout": []
+                                    "Web App Layout": [
+                                        {"importing the model village":[],"code_type":"html"},
+                                        {"building the village from code":[],"code_type":"html"}
+
+                                    ]
                                 }
                             ]
 
                         },
                         {
                             "Village Animation": [{
-                                    "Mesh Parents": []
+                                    "Mesh Parents": [
+                                        {"Simple playground to help demonstrate parenting.":[]}
+                                    ]
                                 },
                                 {
-                                    "Building the Car": []
+                                    "Building the Car": [
+                                        {"Simple demonstration showing the basics of extruding meshes.":[]},
+                                        {"Expanding on the basics of extruding meshes.":[]}
+                                    ]
                                 },
                                 {
-                                    "Car Materials": []
+                                    "Car Materials": [
+                                        {"Simple demonstration of adding a material to the extruded car body.":[]},
+                                        {"Simple demonstration of adding a material to the extruded wheels.":[]}
+                                    ]
                                 },
                                 {
-                                    "Wheel Animation": []
+                                    "Wheel Animation": [
+                                        {"Simple demonstration of animating one of the car's wheels.":[]},
+                                        {"Adding the wheel animation to all 4 tires.":[]}
+                                    ]
                                 },
                                 {
-                                    "Car Animation": []
+                                    "Car Animation": [
+                                        {"Simple example of how to animate the car's position forward.":[]},
+                                        {"Add the animating car back into the village.":[]}
+                                    ]
                                 },
                                 {
-                                    "Character Animation": []
+                                    "Character Animation": [
+                                        {"Simple example of loading an animated character into your scene.":[]},
+                                    ]
                                 },
                                 {
-                                    "A Walk Around The Village": []
+                                    "A Walk Around The Village": [
+                                        {"Simple example of animating an object along a path.":[]},
+                                        {"Animate a character walking through the village.":[]},
+                                    ]
                                 }
                             ]
 
                         },
                         {
                             "Avoiding Collisions": [{
-                                "Avoiding a Car Crash": []
+                                "Avoiding a Car Crash": [
+                                    {"Detect when a car collides with a box and stop the character's animation.":[]},
+                                    {"Detect when a car collides with an invisible box and stop the character's animation.":[]}
+                                ]
                             }]
                         },
                         {
                             "A Better Environment": [{
-                                    "Distant Hills": []
+                                    "Distant Hills": [
+                                        {"Create terrain from a plane with a height map.":[]},
+                                        {"Add a texture to your terrain.":[]},
+                                        {"Add a clearer texture to the area within the village.":[]},
+                                        {"Add the dwellings back into the village scene.":[]},
+                                        {"Add the animating car back into the village scene.":[]},
+                                        
+                                    ]
                                 },
                                 {
-                                    "Skies Above": []
+                                    "Skies Above": [
+                                        {"Add a skybox to your scene.":[]},
+                                    ]
                                 },
                                 {
-                                    "Sprite Trees": []
+                                    "Sprite Trees": [
+                                        {"Add sprite trees to your scene.":[]},
+                                        {"Add an animated UFO to your scene.":[]}
+                                    ]
                                 }
                             ]
 
                         },
                         {
                             "Build a Particle Fountain": [{
-                                    "A Lathe Turned Fountain": []
+                                    "A Lathe Turned Fountain": [
+                                        {"Use the createLathe method to create a fountain.":[]},
+                                        {"":[]},
+                                    ]
                                 },
                                 {
                                     "Particle Spray": []
