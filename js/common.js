@@ -43,7 +43,7 @@ function createDefaultEngine() {
 //     }
 // }
 
-function initFunction(createSceneFunction) {
+async function initFunction(createSceneFunction) {
     try {
         const canvas = document.getElementById("renderCanvas");
         if (!canvas) {
@@ -67,6 +67,9 @@ function initFunction(createSceneFunction) {
         if (scene) {
             scene.dispose();
         }
+
+        globalThis.HK = await HavokPhysics();
+
 
         scene = createSceneFunction();
     } catch (e) {
