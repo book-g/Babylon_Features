@@ -165,13 +165,59 @@ function generateHierarchy(obj, parentElement) {
     });
 } 
 
+var index = 0;
+var pageMap = {};
+function pageMapper(obj) {
+    Object.entries(obj).forEach(([key, value]) => {
+        // Create a container for the key
+     
+        //key 
 
+        if(key!="code_type"){
+        
+
+        if (Array.isArray(value) && value.length > 0) {
+            // Create a sub-container for nested children
+            
+            value.forEach((child) => {
+                Object.entries(child).forEach(([subKey, subValue]) => {
+                    
+                    // Recursive call if there are deeper levels
+                    if (Array.isArray(subValue) && subValue.length > 0) {
+                       
+
+                        pageMapper({ [subKey]: subValue });
+                    }else{
+                        //subkey
+
+                        if(subKey!="code_type"){
+                            ++index;
+                            pageMap[subKey]=index;
+                            console.log(`\"${subKey}\":${index},`);
+                        }
+                            
+                    }
+
+
+                });
+            });
+
+           
+        }
+    }
+
+    });
+
+    console.log(pageMap);
+}
 
 // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     const rootElement = document.getElementById('hierarchicalStructure'); // Find the target container
     if (rootElement) {
         generateHierarchy(root_content, rootElement); // Generate the hierarchy
+        index = 0;
+        pageMapper(root_content,index);
     } else {
         console.error("Root element for hierarchy not found");
     }
