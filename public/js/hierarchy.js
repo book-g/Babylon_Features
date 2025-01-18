@@ -193,7 +193,7 @@ function pageMapper(obj) {
                         if(subKey!="code_type"){
                             ++index;
                             pageMap[subKey]=index;
-                            console.log(`\"${subKey}\":${index},`);
+                            //console.log(`\"${subKey}\":${index},`);
                         }
                             
                     }
